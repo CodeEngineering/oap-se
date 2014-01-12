@@ -2,7 +2,7 @@
 RewriteEngine On
 
 # Installation directory
-#RewriteBase /var/www/
+RewriteBase /
 
 # Allow these directories and files to be displayed directly:
 # - index.php (DO NOT FORGET THIS!)

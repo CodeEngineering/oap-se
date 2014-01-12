@@ -1,5 +1,5 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-
+ 
 class mapping extends CI_Controller {
 var  $connectors=array();
 	function __construct()

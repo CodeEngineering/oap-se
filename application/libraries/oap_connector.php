@@ -62,7 +62,7 @@ return $res;
 		<field name="First Name">Testing</field>
 		<field name="E-Mail">test@moon-ray.com</field>
 	</Group_Tag>
-</contact>
+</contact> 
 */
 
 }
@@ -249,8 +249,8 @@ var $request=array('key','search','fetch','add','update','fetch_tag','fetch_sequ
 
 			$this->ci->curl->create($point);
 			$this->ci->curl->post($form);
-			$this->ci->curl->proxy('http://cache2.lrdc.lexmark.com'); 
-			$this->ci->curl->proxy_login('mtel', 'Lexmark#321');
+			//$this->ci->curl->proxy('http://cache2.lrdc.lexmark.com'); 
+			//$this->ci->curl->proxy_login('mtel', 'Lexmark#321');
 			$res= $this->ci->curl->execute();
 			$res=$this->ci->format->factory($res,'xml')->to_array();
 			return $res;

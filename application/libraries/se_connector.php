@@ -19,7 +19,7 @@ var  $api=array (
 
  var $form_fields=array(
 				"K"      =>'',
-			);				
+			);	 			
 				
 /*************************************************************************************/
 /*
@@ -124,8 +124,8 @@ function execute($point,$form=array(),$method='get')
 				}
 		}
 		
-		$this->ci->curl->proxy('http://cache2.lrdc.lexmark.com'); 
-		$this->ci->curl->proxy_login('mtel', 'Lexmark#321');
+		//$this->ci->curl->proxy('http://cache2.lrdc.lexmark.com'); 
+		//$this->ci->curl->proxy_login('mtel', 'Lexmark#321');
 
 			$res= $this->ci->curl->execute();
 			return $this->ci->format->factory($res,'json')->to_array();
