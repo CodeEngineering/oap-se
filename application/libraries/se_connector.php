@@ -5,21 +5,21 @@ class se_connector{
 	var $name="Social Engine";
 	var $abr="SE";
 	var $debug=false;
+	var $users_fields=array();
 	
 	function __construct()
 	{
 		$this->ci =& get_instance();	
-		//$this->key['users']=$this->key__();
+		include('se.fields.php');
+		$this->users_fields=$user_fieldlist;
 	}
 var  $api=array (
 				'users'	=>"http://se4api.bpsstaging.com/restapi/users/" 
-				
-				
 				);
 
  var $form_fields=array(
 				"K"      =>'',
-			);	 			
+			);				
 				
 /*************************************************************************************/
 /*
@@ -36,11 +36,19 @@ var  $api=array (
 	
 */
 /*************************************************************************************/
-function Fields($point,$data=null)
+
+function Fields($data='user')
 {
-		$res=$this->execute($point);
-		$fields=array_keys($res[0]);
-		return $fields;
+	switch ($data)
+	{
+		case 'user':
+		{
+			$fields=$this->users_fields;	
+			break;
+		}
+	}
+	
+	return $fields;
 }
 function Create($point,$data=null)
 {

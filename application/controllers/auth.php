@@ -499,7 +499,7 @@ class Auth extends CI_Controller
 		$this->email->subject(sprintf($this->lang->line('auth_subject_'.$type), $this->config->item('website_name', 'tank_auth')));
 		$this->email->message($this->load->view('email/'.$type.'-html', $data, TRUE));
 		$this->email->set_alt_message($this->load->view('email/'.$type.'-txt', $data, TRUE));
-		$this->email->send();
+		echo $this->email->send();exit;
 	}
 
 	/**

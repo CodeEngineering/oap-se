@@ -2,15 +2,18 @@
 
 class oap_connector {
 
+
 var $key=array();
 var $name="Office AutoPilot";
-var $abr="oap";
-
-
+var $abr="OAP";
+var $users=array('Contact Information','Contact Attributes','Contact System Attributes','Lead Information','Sequences and Tags','Affiliate Data','Transaction Info','Credit Card');
+private $users_fields=array();
 function __construct()
 {
 	//parent::__construct();
 	$this->ci =& get_instance();	
+	include('oap.fields.php');
+	$this->users_fields=$user_fieldlist;
 	//$this->key['users']=$this->key__();
 	//$this->key['users']=$this->key['users']['Contact Information'];
 }
@@ -44,12 +47,20 @@ var  $api=array (
 	
 */
 /*************************************************************************************/
-function Fields($point,$data=null)
+function Fields($data='user')
 {
 		$this->form_fields['reqType']='key';
 		$this->form_fields['data']='';
-		$res= $this->execute($point,$this->form_fields);
-		return $this->key__($res);
+
+		switch ($data)
+		{
+			case 'user':
+			{
+				$res= $this->users_fields['Contact Information'];
+				break;
+			}
+			}
+		return ($res);
 }
 function Create($point,$data=null)
 {
@@ -62,7 +73,7 @@ return $res;
 		<field name="First Name">Testing</field>
 		<field name="E-Mail">test@moon-ray.com</field>
 	</Group_Tag>
-</contact> 
+</contact>
 */
 
 }

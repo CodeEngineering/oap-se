@@ -7,7 +7,7 @@
  * @tutorial Set the class name and the constructor method name to your model name, then rename 'table_name' into your sql table name.Optionnaly give the database group name to use or the database object to the second parameter of the parent constructor.
  *
  */
-class connector_map extends Acicrud {
+class connector extends Acicrud {
 
     //CONSTRUCTOR   
    
@@ -19,5 +19,5 @@ class connector_map extends Acicrud {
     //CUSTOM METHODS
      
 }
-
+ 
 ?>
