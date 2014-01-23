@@ -8,12 +8,14 @@ var $name="Office AutoPilot";
 var $abr="OAP";
 var $users=array('Contact Information','Contact Attributes','Contact System Attributes','Lead Information','Sequences and Tags','Affiliate Data','Transaction Info','Credit Card');
 private $users_fields=array();
+var $filters=array();
 function __construct()
 {
 	//parent::__construct();
 	$this->ci =& get_instance();	
 	include('oap.fields.php');
 	$this->users_fields=$user_fieldlist;
+	$this->filters=$filter_operation;
 	//$this->key['users']=$this->key__();
 	//$this->key['users']=$this->key['users']['Contact Information'];
 }

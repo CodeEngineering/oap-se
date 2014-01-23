@@ -1,35 +1,46 @@
 <?php
+$filter_operation=array(
+	'e' => 'Equal to', 
+	'n' => 'Not equal to', 
+	's' => 'Starts with ',  
+	'c' => 'Like',  
+	'k' => 'Not Like',  
+	'l' => 'Less than',  
+	'g' => 'Greater Than',  
+	'm' => 'Less Than or Equal to',  
+	'h' => 'Greater Than or Equal to' 
+);
 $user_fieldlist=
 Array
 (
     'Contact Information' => Array
         (
-            0  => array('field'=>'Subscriber/Customer #','read'=>true,'write'=>false,'show'=>false),
-            1  => array('field'=>'',                     'read'=>true,'write'=>true,'show'=>false),
-            2  => array('field'=>'Company',              'read'=>true,'write'=>true,'show'=>true),
-            3  => array('field'=>'Title',                'read'=>true,'write'=>true,'show'=>true),
-            4  => array('field'=>'Salutation',           'read'=>true,'write'=>true,'show'=>true),
-            5  => array('field'=>'First Name',           'read'=>true,'write'=>true,'show'=>true),
-            6  => array('field'=>'Middle Name',          'read'=>true,'write'=>true,'show'=>true),
-            7  => array('field'=>'Last Name',            'read'=>true,'write'=>true,'show'=>true),
-            8  => array('field'=>'Name Suffix',          'read'=>true,'write'=>true,'show'=>true),
-            9  => array('field'=>'Address',              'read'=>true,'write'=>true,'show'=>true),
-            10 => array('field'=>'Address 2',            'read'=>true,'write'=>true,'show'=>true),
-            11 => array('field'=>'Address 3',            'read'=>true,'write'=>true,'show'=>true),
-            12 => array('field'=>'City',                 'read'=>true,'write'=>true,'show'=>true),
-            13 => array('field'=>'State',                'read'=>true,'write'=>true,'show'=>true),
-            14 => array('field'=>'Zip Code',             'read'=>true,'write'=>true,'show'=>true),
-            15 => array('field'=>'Country',              'read'=>true,'write'=>true,'show'=>true),
-            16 => array('field'=>'E-Mail',               'read'=>true,'write'=>true,'show'=>true),
-            17 => array('field'=>'Primary Phone',        'read'=>true,'write'=>true,'show'=>true),
-            18 => array('field'=>'Home Phone',           'read'=>true,'write'=>true,'show'=>true),
-            19 => array('field'=>'Cell Phone',           'read'=>true,'write'=>true,'show'=>true),
-            20 => array('field'=>'Office Phone',         'read'=>true,'write'=>true,'show'=>true),
-            21 => array('field'=>'Extension Number',     'read'=>true,'write'=>true,'show'=>true),
-            22 => array('field'=>'Fax',                  'read'=>true,'write'=>true,'show'=>true),
-            23 => array('field'=>'Website',              'read'=>true,'write'=>true,'show'=>true),
-            24 =>array('field'=> 'Birthday',             'read'=>true,'write'=>true,'show'=>true),
-            25 => array('field'=>'Gender',               'read'=>true,'write'=>true,'show'=>true)
+            0  => array('field'=>'Subscriber/Customer #',                     'read'=>true,'write'=>false,'show'=>false,'type'=>'text'),
+            1  => array('field'=>''                     ,                     'read'=>true,'write'=>true, 'show'=>false, 'type'=>'text'),
+            2  => array('field'=>'Company'              ,                     'read'=>true,'write'=>true, 'show'=>true,  'type'=>'text'),
+            3  => array('field'=>'Title'                ,                     'read'=>true,'write'=>true, 'show'=>true,  'type'=>'text'),
+            4  => array('field'=>'Salutation'           ,                     'read'=>true,'write'=>true, 'show'=>true,  'type'=>'text'),
+            5  => array('field'=>'First Name'           ,                     'read'=>true,'write'=>true, 'show'=>true,  'type'=>'text'),
+            6  => array('field'=>'Middle Name'          ,                     'read'=>true,'write'=>true, 'show'=>true,  'type'=>'text'),
+            7  => array('field'=>'Last Name'            ,                     'read'=>true,'write'=>true, 'show'=>true,  'type'=>'text'),
+            8  => array('field'=>'Name Suffix'          ,                     'read'=>true,'write'=>true, 'show'=>true,  'type'=>'text'),
+            9  => array('field'=>'Address'              ,                     'read'=>true,'write'=>true, 'show'=>true,  'type'=>'text'),
+            10 => array('field'=>'Address 2'            ,                     'read'=>true,'write'=>true, 'show'=>true,  'type'=>'text'),
+            11 => array('field'=>'Address 3'            ,                     'read'=>true,'write'=>true, 'show'=>true,  'type'=>'text'),
+            12 => array('field'=>'City'                 ,                     'read'=>true,'write'=>true, 'show'=>true,  'type'=>'text'),
+            13 => array('field'=>'State'                ,                     'read'=>true,'write'=>true, 'show'=>true,  'type'=>'text'),
+            14 => array('field'=>'Zip Code'             ,                     'read'=>true,'write'=>true, 'show'=>true,  'type'=>'zip'),
+            15 => array('field'=>'Country'              ,                     'read'=>true,'write'=>true, 'show'=>true,  'type'=>'text'),
+            16 => array('field'=>'E-Mail'               ,                     'read'=>true,'write'=>true, 'show'=>true,  'type'=>'email'),
+            17 => array('field'=>'Primary Phone'        ,                     'read'=>true,'write'=>true, 'show'=>true,  'type'=>'tel'),
+            18 => array('field'=>'Home Phone'           ,                     'read'=>true,'write'=>true, 'show'=>true,  'type'=>'tel'),
+            19 => array('field'=>'Cell Phone'           ,                     'read'=>true,'write'=>true, 'show'=>true,  'type'=>'tel'),
+            20 => array('field'=>'Office Phone'         ,                     'read'=>true,'write'=>true, 'show'=>true,  'type'=>'tel'),
+            21 => array('field'=>'Extension Number'     ,                     'read'=>true,'write'=>true, 'show'=>true,  'type'=>'number'),
+            22 => array('field'=>'Fax'                  ,                     'read'=>true,'write'=>true, 'show'=>true,  'type'=>'tel'),
+            23 => array('field'=>'Website'              ,                     'read'=>true,'write'=>true, 'show'=>true,  'type'=>'url'),
+            24 =>array('field'=> 'Birthday'             ,                     'read'=>true,'write'=>true, 'show'=>true,  'type'=>'datetime'),
+            25 => array('field'=>'Gender'               ,                     'read'=>true,'write'=>true, 'show'=>true,  'type'=>'text')
         ),
 
     'Contact Attributes' => Array

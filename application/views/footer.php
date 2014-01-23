@@ -6,9 +6,7 @@
     </div> <!-- /container -->
 
     <!-- javascript at the end of the document so the pages load faster -->
-    <script src="/js/jquery-1.9.1.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/jquery-ui-1.10.3.custom.min.js"></script>
+
 <!--	
      <script src="/js/bootstrap-transition.js"></script>
     <script src="/js/bootstrap-alert.js"></script>

@@ -12,6 +12,7 @@ class Welcome extends CI_Controller {
 
 	public function index()
 	{
+		redirect('/mapping/step1/');
 		$this->load->view('header');
 		$this->load->view('content1');
 		$this->load->view('footer');
@@ -31,7 +32,13 @@ class Welcome extends CI_Controller {
 			$this->load->view('footer');
 		}
 	}
-	
+	public function index2()
+	{
+		
+		$this->load->view('header');
+		$this->load->view('flow');
+		$this->load->view('footer');
+	}	
 }
 
 /* End of file welcome.php */
