@@ -10,7 +10,7 @@
 				<h3>Select Target fields for <strong><?=$connectors_list[$connection->api_target]?></strong></h3>
           </div>
           <div class="span2">
-			
+			<ul class="list-group">
 			<?php echo form_open('mapping/step03',array('name'=>'step01','method'=>'post','class'=>"form-horizontal", "role"=>"form"));?>
 			<?= form_hidden('form', 'step02');?>
 			<?= form_hidden('id', $connection->id);?>
@@ -22,15 +22,16 @@
 		foreach ($api_target_fields as $key=>$val)
 		{
 		?>
-			 <div class="checkbox">
-			  <label>
-				<input type="checkbox" name='api_targets[]' value="<?=$key?>" <?=in_array($key,$include)?'checked':''?>>
-				<?=$val?>
-			  </label>
-			</div>
-
+			<li class="list-group-item">			
+				<div class="checkbox">
+				  <label>
+					<input type="checkbox" name='api_targets[]' value="<?=$key?>" <?=in_array($key,$include)?'checked':''?>>
+					<?=$val?>
+				  </label>
+				</div>
+			</li>
 		 <?php } ?>  
-   
+   </ul>
   <div class="form-group">
     <div class="col-sm-5" style='text-align:right'>
   				<button type="submit" class="btn btn-primary">

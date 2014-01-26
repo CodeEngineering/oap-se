@@ -11,8 +11,8 @@
           </div>
           <div class="span2">
 			
-			<?php echo form_open('mapping/step04',array('name'=>'step04','method'=>'post','class'=>"form-horizontal", "role"=>"form"));?>
-			<?= form_hidden('form', 'step03');?>
+			<?php echo form_open('mapping/step05',array('name'=>'step04','method'=>'post','class'=>"form-horizontal", "role"=>"form"));?>
+			<?= form_hidden('form', 'step04');?>
 			<?= form_hidden('id', $connection->id);?>
 			
 		<?php
@@ -51,12 +51,48 @@
 		  </div>  
 		</div>
 		<table class='table' id='filter_list'>
-			<tr>
-				<th>Field name</th>
-				<th>Operation</th>
-				<th>Value</th>
-				<th>Edit/Delete</th>
-			</tr>
+			<thead>
+				<tr>
+					<th>Field name</th>
+					<th>Operation</th>
+					<th>Value</th>
+					<th>Edit/Delete</th>
+				</tr>
+			</thead>
+			<tfoot>
+				<tr>
+					<th>Field name</th>
+					<th>Operation</th>
+					<th>Value</th>
+					<th>Edit/Delete</th>
+				</tr>
+			</tfoot>
+			<tbody>
+			<?php
+				$filters=json_decode($connection->source_filter,true);
+				$filters=is_array($filters)?$filters:array('field'=>array(),'operation'=>array(),'value'=>array());
+				
+				foreach ($filters['field'] as $key=>$filter)
+				{
+					?>
+					<tr>
+						<td><?=$api_source_fields[$filters['field'][$key]]?></td>
+						<td><?=$api_source_filter[$filters['operation'][$key]]?></td>
+						<td><?=$filters['value'][$key]?></td>
+						<td>
+							<span class=' edit_filter glyphicon glyphicon-edit'>
+							</span>&nbsp;&nbsp;<span class='delete_filter glyphicon glyphicon-remove'></span>
+						</td>
+						<input class="filter_field" name="source_filter_field[]" type="hidden" value="<?=$filters['field'][$key]?>"/>
+						<input class="filter_operation" name="source_filter_operation[]" type="hidden" value="<?=$filters['operation'][$key]?>"/>
+						<input class="filter_value" name="source_filter_value[]" type="hidden" value="<?=$filters['value'][$key]?>"/>
+					</tr>
+					
+					<?php
+				}
+			?>
+			</tbody>
+			
 		</table>
   
   <div class="form-group">
@@ -85,18 +121,20 @@ $('#create-filter').click(function(){
 tr="<tr><td>"+$('#api_source_fields option:selected').text()+"</td><td>"+$('#api_source_filter_operation option:selected').text()+"</td><td>"+$('#filter-value').val()+"</td><td><span class=' edit_filter glyphicon glyphicon-edit'></span>&nbsp;&nbsp;<span class='delete_filter glyphicon glyphicon-remove'></span></td></tr>";
 $('#filter_list > tbody:last').append(tr);
 
-	$('<input type="hidden" value="'+hide+'">')
+	$('<input class="filter_field" name=\'source_filter_field[]\' type="hidden" value="'+$('#api_source_fields option:selected').val()+'">').appendTo($("#filter_list >tbody>tr:last"));;
+	$('<input class="filter_operation"  name=\'source_filter_operation[]\' type="hidden" value="'+$('#api_source_filter_operation option:selected').val()+'">').appendTo($("#filter_list >tbody>tr:last"));;
+	$('<input  class="filter_value"  name=\'source_filter_value[]\' type="hidden" value="'+$('#filter-value').val()+'">').appendTo($("#filter_list >tbody>tr:last"));;
+	//x.appendTo($("#filter_list >tbody>tr:last"));
 	
 	$('.delete_filter').click(function(){
-	$(this).parents('tr').remove();
-
+		$(this).parents('tr').remove();
 	});
 	$('.edit_filter').click(function(){
 		tr=$(this).parents('tr');
 		//$('tr').find('td:eq(0)')
-		$("#api_source_fields option:contains("+$(tr).find('td:eq(0)').text()+")").attr('selected', true);
-		$("#api_source_filter_operation option:contains("+$(tr).find('td:eq(1)').text()+")").attr('selected', true);
-		$("#filter-value").val($(tr).find('td:eq(2)').text());
+		$("#api_source_fields").val($(tr).find('input.filter_field').val());//.attr('selected', true);
+		$("#api_source_filter_operation").val($(tr).find('input.filter_operation').val());
+		$("#filter-value").val($(tr).find('input.filter_value').val());
 		$(this).parents('tr').remove();
 		
 		

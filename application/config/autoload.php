@@ -64,7 +64,7 @@ $autoload['libraries'] = array('curl','format','oap_connector','se_connector','a
 |	$autoload['helper'] = array('url', 'file');
 */
 
-$autoload['helper'] = array('site_info','url','form');
+$autoload['helper'] = array('site_info','url','form','wdcalendar_functions');
 
 
 /*

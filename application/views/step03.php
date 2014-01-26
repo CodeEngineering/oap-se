@@ -21,6 +21,8 @@
 		$include=is_array($include)?$include:array();
 		$counter=0;
 		$source_fields=json_decode($connection->source_fields);
+		//print_r($source_fields);
+		//print_r($api_source_fields);
 		foreach ($api_target_fields as $key=>$val)
 		{
 		?>

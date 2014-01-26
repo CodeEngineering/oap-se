@@ -101,7 +101,7 @@ var  $connectors=array();
 		$data['connectors_list']=$connectors_list;
 
 		header('Content-Type: text/html; charset=utf-8');
-		$this->load->view('header');
+		$this->load->view('header',array('cal'=>false));
 		$this->load->view('step01',$data);
 		$this->load->view('footer');		
 	}
@@ -155,7 +155,7 @@ Description:
 		
 		
 		header('Content-Type: text/html; charset=utf-8');
-		$this->load->view('header');
+		$this->load->view('header',array('cal'=>false));
 		$this->load->view('step02',$data);
 		$this->load->view('footer');		
 	}
@@ -218,7 +218,7 @@ select source fields
 		
 		
 		header('Content-Type: text/html; charset=utf-8');
-		$this->load->view('header');
+		$this->load->view('header',array('cal'=>false));
 		$this->load->view('step03',$data);
 		$this->load->view('footer');		
 	}
@@ -284,11 +284,43 @@ define source filter
 		
 		
 		header('Content-Type: text/html; charset=utf-8');
-		$this->load->view('header');
+		$this->load->view('header',array('cal'=>false));
 		$this->load->view('step04',$data);
 		$this->load->view('footer');		
 	}
 	
+/**
+** Form guide : step 4
+**
+define source filter
+**/
+	
+	function step05($id=null)
+	{
+		if (!$this->tank_auth->is_logged_in()) {
+			redirect('/auth/login/');
+		}
+		
+		$data['user_id']	= $this->tank_auth->get_user_id();
+		$data['username']	= $this->tank_auth->get_username();
+
+		$id=is_null($id)?$this->saveform($id):$id;
+		if (!is_null($id))
+		{
+			$list=$this->connector->getAll(1, array('user'=>'desc'), array('id'=>$id)); 
+			$data['connection']=$list[0];			
+		}else
+		{
+		 redirect('/step01/', 'refresh');
+		}
+		
+		
+		
+		header('Content-Type: text/html; charset=utf-8');
+		$this->load->view('header',array('cal'=>true));
+		$this->load->view('step05',$data);
+		$this->load->view('footer');		
+	}	
 	
 	function saveform($id=null)
 	{
@@ -310,19 +342,40 @@ define source filter
 				$o->id                      =(int)$this->input->post('id');
 				$targets                    =$this->input->post('api_targets');
 				
-				$o->target_fields		=json_encode($targets);
-				$o->source_fields		=json_encode( array_fill(0, count($targets), 0));
+				$o->target_fields		    =json_encode($targets);
+				//$o->source_fields		    =json_encode( array_fill(0, count($targets), 0));
 				break;
 			}
 			case 'step03': // source api fields
 			{
 				$o->id                      =(int)$this->input->post('id');
-				$source                    =$this->input->post('api_source_fields');
-				
-				
-				$o->source_fields		=json_encode( $source);
+				$source                     =$this->input->post('api_source_fields');
+				$o->source_fields		    =json_encode( $source);
 				break;
-			}			
+			}
+			case 'step04': // source filters
+			{
+				$o->id =(int)$this->input->post('id');
+				$filters['field']=array();
+				$filters['operation']=array();
+				$filters['value']=array();
+				if (isset($_POST['source_filter_field']))
+				{
+					$filters['field']=$_POST['source_filter_field'];
+				}				
+				if (isset($_POST['source_filter_operation']))
+				{
+					$filters['operation']=$_POST['source_filter_operation'];
+				}
+				if (isset($_POST['source_filter_value']))
+				{
+					$filters['value']=$_POST['source_filter_value'];
+				}
+				$filters=json_encode($filters);
+				$o->source_filter=$filters;
+				
+				break;
+			}
 			
 		}
 		if ($o->id>0)//update
