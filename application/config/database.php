@@ -48,11 +48,23 @@
 $active_group = 'default';
 $active_record = TRUE;
 
+
 $db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'webuser';
 $db['default']['password'] = 'webuser';
 $db['default']['database'] = 'connector';
 $db['default']['dbdriver'] = 'mysql';
+
+$whitelist = array('127.0.0.1');
+
+if(!in_array($_SERVER['REMOTE_ADDR'], $whitelist)){
+	$db['default']['hostname'] = 'localhost';
+	$db['default']['username'] = 'bpsstage_webuser';
+	$db['default']['password'] = 'bpsstage_webuser';
+	$db['default']['database'] = 'bpsstage_connector';
+	$db['default']['dbdriver'] = 'mysql';   
+}
+
 /* $db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'oap_se';
 $db['default']['password'] = 'webuser';
