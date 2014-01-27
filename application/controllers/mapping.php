@@ -16,7 +16,7 @@ var  $connectors=array();
 
 	public function index()
 	{
-		redirect('/mapping/step1/');
+		redirect('/mapping/step01/');
 		$this->load->view('header');
 		$this->load->view('content1');
 		$this->load->view('footer');
