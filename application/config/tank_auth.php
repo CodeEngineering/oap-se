@@ -130,6 +130,17 @@ $config['use_recaptcha'] = true;
 $config['recaptcha_public_key'] = '6LeWCO0SAAAAAL4IHFzkancey0bbFyh95qaD7NAe';
 $config['recaptcha_private_key'] = '6LeWCO0SAAAAAL5t5UM6L_7DLX-s09I-G7qdYzvH';
 
+$whitelist = array('127.0.0.1', "::1");
+
+if(!in_array($_SERVER['REMOTE_ADDR'], $whitelist)){
+$config['use_recaptcha'] = true;
+$config['recaptcha_public_key'] = '6LdOre0SAAAAAHsAj-uVA_zJeSz7WPxi_gFjBWwH';
+$config['recaptcha_private_key'] = '6LdOre0SAAAAAKTkjw7ayVkA2uki3YLGZL4Dog6-';
+    
+}
+//bpsstaging
+
+
 /*
 |--------------------------------------------------------------------------
 | Database settings
