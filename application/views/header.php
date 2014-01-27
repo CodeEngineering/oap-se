@@ -16,7 +16,7 @@
       body {
         padding-top: 60px;
         padding-bottom: 40px;
-      }
+		}
       .sidebar-nav {
         padding: 9px 0;
       }
@@ -46,30 +46,15 @@
     <link href="/css/alert.css" rel="stylesheet" type="text/css" /> 
     <link href="/css/main.css" rel="stylesheet" type="text/css" /> 
 -->
-<?php if($cal){ ?>
-<link href="/css/dailog.css" rel="stylesheet" type="text/css" />
-<link href="/css/alert.css" rel="stylesheet" type="text/css" /> 
-<link href="/css/calendar.css" rel="stylesheet" type="text/css" /> 
-<link href="/css/dp.css" rel="stylesheet" type="text/css" />   
-<link href="/css/main.css" rel="stylesheet" type="text/css" /> 
-<?}?>
 
-<script>
 
-</script>
 
-	<!-- <script src="/js/src/jquery.min.js" type="text/javascript"></script> -->
+
+	<!-- <script src="/js/src/jquery.min.js" type="text/javascript"></script> 
 	<script src="/js/src/Plugins/migrate.js" type="text/javascript"></script>
 	
 	
 	<script>
-
-	//var jq16=$.noConflict(false);
-	//console.log($.fn.jquery );
-
-//$log.append( "<h3>After $.noConflict(true)</h3>" );
-//$log.append( "1st loaded jQuery version ($): " + $.fn.jquery + "<br>" );
-//$log.append( "2nd loaded jQuery version (jq162): " + jq162.fn.jquery + "<br>" )	
 	</script>
    <script src="/js/src/Plugins/Common.js" type="text/javascript"></script>    
 	
@@ -80,7 +65,7 @@
     <script src="/js/src/Plugins/jquery.ifrmdailog.js" defer="defer" type="text/javascript"></script>
     <script src="/js/src/Plugins/wdCalendar_lang_US.js" type="text/javascript"></script>    
    <script src="/js/src/Plugins/jquery.calendar.js" type="text/javascript"></script>
- 
+--> 
 	<!-- calendar -->
 	
   </head>

@@ -15,7 +15,231 @@
 				<?=form_input(array('name' => 'connection_name', 'type'=>'hidden', 'id' =>'connection_name','value'=>$connection->connection_name));?>
           </div>
           <div class="span2">
-			
+<div class='row'>
+
+<div class="panel panel-primary">
+<div class="panel-heading">Daily Schedule</div>
+ <div class="panel-body">		  
+<div class="col-lg-4">
+    <div class="input-group">
+	
+      <span class="input-group-addon">
+		Run every 10PM EST? &nbsp;
+        <input name='weekdays' value='10pm' type="radio" placeholder='run every 10 pm EST' checked>
+      </span>
+		<select name='10pm' class="form-control">
+			<option value='0'>Every Night</option>
+			<option value='1'>Every Monday</option>
+			<option value='2'>Every Wednesday</option>
+			<option value='3'>Every Friday</option>
+			<option value='4'>Every MWF</option>
+		</select>
+
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+
+
+<div class="col-lg-4">
+    <div class="input-group">
+      <span class="input-group-addon">
+	  Run on specifics day and time
+        <input name='weekdays' type="radio" value='alldays'>
+      </span>
+		<select name='alldays' class="form-control" >
+		
+			<option value='0'>On weekdays</option>
+			<option value='1'>On weekdays and Weekends</option>
+		
+		</select>
+
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+</div>
+</div>
+<div class="panel panel-primary">
+<div class="panel-heading">Sync Interval</div>
+<div class="panel-body">
+<div class="col-lg-4">
+    <div class="input-group">
+      <span class="input-group-addon">
+	  Run every (hours)
+      </span>
+		<select name='interval' class="form-control">
+		
+			<option>0.5</option>
+			<option>1.0</option>
+			<option>2.0</option>
+			<option>3.0</option>
+			<option>4.0</option>
+			<option>5.0</option>
+			<option>6.0</option>
+			<option>12.0</option>
+			<option>24.0</option>
+		</select>
+
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+</div>
+</div>
+</div>
+<div class='row'>
+<div class="panel panel-primary">
+<div class="panel-heading">Detail Schedule</div>
+<div class="panel-body">		
+<div class="col-md-7 col-md-offset-3">		  
+<table class='table table-condensed table-striped'>
+<thead>
+	<tr>
+		<th>Day</th>
+		<th>Sun</th>
+		<th>Mon</th>
+		<th>Tue</th>
+		<th>Wed</th>
+		<th>Thu</th>
+		<th>Fri</th>
+		<th>Sat</th>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+		<th>Enabled</th>
+		<td>  
+			<div class="checkbox">
+				<label>
+				  <input name='enabled[0]' type="checkbox"> &nbsp;
+				</label>
+			</div>
+		</td>
+		<td>  
+			<div class="checkbox">
+				<label>
+				  <input name='enabled[1]' type="checkbox"> &nbsp;
+				</label>
+			</div>
+		</td>
+		<td>  
+			<div class="checkbox">
+				<label>
+				  <input name='enabled[2]' type="checkbox"> &nbsp;
+				</label>
+			</div>
+		</td>
+		<td>  
+			<div class="checkbox">
+				<label>
+				  <input name='enabled[3]' type="checkbox"> &nbsp;
+				</label>
+			</div>
+		</td>
+		<td>  
+			<div class="checkbox">
+				<label>
+				  <input name='enabled[4]' type="checkbox"> &nbsp;
+				</label>
+			</div>
+		</td>
+		<td>  
+			<div class="checkbox">
+				<label>
+				  <input name='enabled[5]' type="checkbox"> &nbsp;
+				</label>
+			</div>
+		</td>
+		<td>  
+			<div class="checkbox">
+				<label>
+				  <input name='enabled[6]' type="checkbox"> &nbsp;
+				</label>
+			</div>
+		</td>
+
+		
+	</tr>
+	<tr>
+		<th> <label>Start</label></th>
+		<td>
+		  <div class="form-group">
+			<input type="input" class="form-control" name="start[0]" placeholder="00:00">
+		  </div>  
+		</td>
+				<td>
+		  <div class="form-group">
+			<input type="input" class="form-control" name="start[1]" placeholder="00:00">
+		  </div>  
+		</td>
+				<td>
+		  <div class="form-group">
+			<input type="input" class="form-control" name="start[2]" placeholder="00:00">
+		  </div>  
+		</td>
+				<td>
+		  <div class="form-group">
+			<input type="input" class="form-control" name="start[3]" placeholder="00:00">
+		  </div>  
+		</td>
+				<td>
+		  <div class="form-group">
+			<input type="input" class="form-control" name="start[4]" placeholder="00:00">
+		  </div>  
+		</td>
+				<td>
+		  <div class="form-group">
+			<input type="input" class="form-control" name="start[5]" placeholder="00:00">
+		  </div>  
+		</td>
+				<td>
+		  <div class="form-group">
+			<input type="input" class="form-control" name="start[6]" placeholder="00:00">
+		  </div>  
+		</td>
+		
+	</tr>
+	<tr>
+		<th> <div class="form-group">End</div></th>
+		<td>
+		  
+			<input type="input" class="form-control" name="end[0]" placeholder="00:00"/>
+		  
+		</td>
+				<td>
+		  <div class="form-group">
+			<input type="input" class="form-control" name="end[1]" placeholder="00:00">
+		  </div>  
+		</td>
+				<td>
+		  <div class="form-group">
+			<input type="input" class="form-control" name="end[2]" placeholder="00:00">
+		  </div>  
+		</td>
+				<td>
+		  <div class="form-group">
+			<input type="input" class="form-control" name="end[3]" placeholder="00:00">
+		  </div>  
+		</td>
+				<td>
+		  <div class="form-group">
+			<input type="input" class="form-control" name="end[4]" placeholder="00:00">
+		  </div>  
+		</td>
+				<td>
+		  <div class="form-group">
+			<input type="input" class="form-control" name="end[5]" placeholder="00:00">
+		  </div>  
+		</td>
+				<td>
+		  <div class="form-group">
+			<input type="input" class="form-control" name="end[6]" placeholder="00:00">
+		  </div>  
+		</td>
+		
+	</tr>	
+</tbody>
+</table>
+</div>
+</div>		
+</div>	
+</div>
+		<!--	
     <div>
 
       <div id="calhead" style="padding-left:1px;padding-right:1px;">          
@@ -90,7 +314,7 @@
         </div>
      
   </div>
-    
+    -->
 
 	  <div class="form-group">
     <div class="col-sm-5" style='text-align:right'>
@@ -110,6 +334,134 @@
       </div>
    
 <script type="text/javascript">
+$(document).ready(function() {
+	$('input[name^="start"]').val("22:00");
+	$('input[name^="end"]').val("00:00");
+		
+	$('select[name^="alldays"]').change(function(){
+		$('input[name^="enabled"]').prop('checked',true);
+				switch ($(this).val())
+				{
+					case '0':
+					{
+						$('input[name^="enabled[0]"]').prop('checked',false);
+						$('input[name^="enabled[6]"]').prop('checked',false);
+						break;
+						
+					}
+					case '1':
+					{
+						break;
+					}
+				}
+		
+	});
+	$('select[name^="10pm"]').change(function(){
+	
+		$('input[name^="enabled"]').prop('checked',false);
+			switch($(this).val())
+			{
+				case '0'://everyday
+				{
+					$('input[name^="enabled"]').prop('checked',true);
+					break;
+				}
+				case '1'://monday
+				{
+					$('input[name^="enabled[1]"]').prop('checked',true);
+					break;
+				}
+				case '2'://wednesday
+				{
+					$('input[name^="enabled[3]"]').prop('checked',true);
+					break;
+				}
+				case '3'://Friday
+				{
+					$('input[name^="enabled[5]"]').prop('checked',true);
+					break;
+				}
+				case '4'://MWF
+				{
+					$('input[name^="enabled[1]"]').prop('checked',true);
+					$('input[name^="enabled[3]"]').prop('checked',true);
+					$('input[name^="enabled[5]"]').prop('checked',true);					
+					break;
+				}
+
+				
+			}
+	
+	});
+$('input[name="weekdays"]:radio ').change(function (){
+
+	switch ($(this).val())
+	{
+		case '10pm':
+		{
+			$('input[name^="start"]').val("22:00");
+			$('input[name^="end"]').val("00:00");
+			$('input[name^="enabled"]').prop('checked',false);
+			switch($('select[name^="10pm"]').val())
+			{
+				case '0'://everyday
+				{
+					$('input[name^="enabled"]').prop('checked',true);
+					break;
+				}
+				case '1'://monday
+				{
+					$('input[name^="enabled[1]"]').prop('checked',false);
+					break;
+				}
+				case '2'://wednesday
+				{
+					$('input[name^="enabled[3]"]').prop('checked',false);
+					break;
+				}
+				case '3'://Friday
+				{
+					$('input[name^="enabled[5]"]').prop('checked',false);
+					break;
+				}
+				case '4'://MWF
+				{
+					$('input[name^="enabled[1]"]').prop('checked',false);
+					$('input[name^="enabled[3]"]').prop('checked',false);
+					$('input[name^="enabled[5]"]').prop('checked',false);					
+					break;
+				}
+
+				
+			}
+			break;
+		}
+		case 'alldays':
+		{
+			$('input[name^="start"]').val("00:00");
+			$('input[name^="end"]').val("24:00");
+			$('input[name^="enabled"]').prop('checked',true);
+			switch ($('select[name^="alldays"]').val())
+			{
+				case '0':
+				{
+					$('input[name^="enabled[0]"]').attr('checked',false);
+					$('input[name^="enabled[6]"]').attr('checked',false);
+					break;
+					
+				}
+				case '1':
+				{
+					break;
+				}
+			}
+			break;
+		}
+	}
+});
+
+});
+/*
 	$(document).ready(function() {     
 	   var view="week";          
 	   
@@ -302,4 +654,5 @@
 		});
 		
 	});
-</script>  
+*/
+	</script>  
