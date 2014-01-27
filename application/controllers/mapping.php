@@ -334,7 +334,7 @@ define source filter
 	function saveform($id=null)
 	{
 		if (!isset($_POST['form'])){return false;}
-		$o=null;
+		$o= new stdClass(); ;
 		switch ($_POST['form'])
 		{
 			case 'step01': //init api connection
