@@ -80,6 +80,7 @@ var  $connectors=array();
 		$data['user_id']	= $this->tank_auth->get_user_id();
 		$data['username']	= $this->tank_auth->get_username();
 		$data['role']		= $this->tank_auth->get_role();		
+		$data['connection']='';
 		$data['connection']->id             ='';
 		$data['connection']->connection_name='';
 		$data['connection']->description    ='';
