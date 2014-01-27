@@ -123,6 +123,7 @@ Description:
 		$data['user_id']	= $this->tank_auth->get_user_id();
 		$data['username']	= $this->tank_auth->get_username();
 		$data['role']		= $this->tank_auth->get_role();		
+		$data['connection']=new stdClass();
 		$data['connection']->id             ='';
 		$data['connection']->connection_name='';
 		$data['connection']->description    ='';
@@ -175,6 +176,7 @@ select source fields
 		$data['user_id']	= $this->tank_auth->get_user_id();
 		$data['username']	= $this->tank_auth->get_username();
 		$data['role']		= $this->tank_auth->get_role();		
+		$data['connection']=new stdClass();
 		$data['connection']->id             ='';
 		$data['connection']->connection_name='';
 		$data['connection']->description    ='';
@@ -239,6 +241,7 @@ define source filter
 		$data['user_id']	= $this->tank_auth->get_user_id();
 		$data['username']	= $this->tank_auth->get_username();
 		$data['role']		= $this->tank_auth->get_role();		
+		$data['connection']=new stdClass();
 		$data['connection']->id             ='';
 		$data['connection']->connection_name='';
 		$data['connection']->description    ='';
@@ -304,7 +307,12 @@ define source filter
 		
 		$data['user_id']	= $this->tank_auth->get_user_id();
 		$data['username']	= $this->tank_auth->get_username();
-
+		$data['connection']=new stdClass();
+		$data['connection']->id             ='';
+		$data['connection']->connection_name='';
+		$data['connection']->description    ='';
+		$data['connection']->api_source     ='';
+		$data['connection']->api_target     ='';
 		$id=is_null($id)?$this->saveform($id):$id;
 		if (!is_null($id))
 		{
