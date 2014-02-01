@@ -10,9 +10,10 @@
 				<h3>Schedule to excute <strong><?=$connection->connection_name?></strong></h3>
 			<?php echo form_open('mapping/step06',array('name'=>'step04','method'=>'post','class'=>"form-horizontal", "role"=>"form"));?>
 				<?= form_hidden('form', 'step05');?>
-				
+				<?= form_hidden('id', $connection->id);?>
 				<?=form_input(array('name' => 'connectionid', 'type'=>'hidden', 'id' =>'connectionid','value'=>$connection->id));?>
 				<?=form_input(array('name' => 'connection_name', 'type'=>'hidden', 'id' =>'connection_name','value'=>$connection->connection_name));?>
+				<?=form_input(array('name' => 'schedule', 'type'=>'hidden', 'id' =>'schedule','value'=>$connection->schedule));?>
           </div>
           <div class="span2">
 <div class='row'>
@@ -25,14 +26,15 @@
 	
       <span class="input-group-addon">
 		Run every 10PM EST? &nbsp;
-        <input name='weekdays' value='10pm' type="radio" placeholder='run every 10 pm EST' checked>
+        <input name='weekdays' class='weekdays' value='10pm' type="radio" placeholder='run every 10 pm EST' <?=$scheduler->weekdays_type=='10pm'?'checked':''?>>
+		
       </span>
 		<select name='10pm' class="form-control">
-			<option value='0'>Every Night</option>
-			<option value='1'>Every Monday</option>
-			<option value='2'>Every Wednesday</option>
-			<option value='3'>Every Friday</option>
-			<option value='4'>Every MWF</option>
+			<option <?$scheduler->days==0?'selected':''?> value='0'>Every Night</option>
+			<option <?$scheduler->days==1?'selected':''?>  value='1'>Every Monday</option>
+			<option <?$scheduler->days==2?'selected':''?>  value='2'>Every Wednesday</option>
+			<option <?$scheduler->days==3?'selected':''?>  value='3'>Every Friday</option>
+			<option <?$scheduler->days==4?'selected':''?>  value='4'>Every MWF</option>
 		</select>
 
     </div><!-- /input-group -->
@@ -43,12 +45,13 @@
     <div class="input-group">
       <span class="input-group-addon">
 	  Run on specifics day and time
-        <input name='weekdays' type="radio" value='alldays'>
+        <input name='weekdays'  class='weekdays' type="radio" value='alldays' <?=$scheduler->weekdays_type=='alldays'?'checked':''?>>
       </span>
 		<select name='alldays' class="form-control" >
 		
-			<option value='0'>On weekdays</option>
-			<option value='1'>On weekdays and Weekends</option>
+			<option  <?$scheduler->days==0?'selected':''?> value='0'>On weekdays</option>
+			<option  <?$scheduler->days==1?'selected':''?> value='1'>On weekdays and Weekends</option>
+			<option  <?$scheduler->days==2?'selected':''?> value='2'>Custom</option>
 		
 		</select>
 
@@ -65,16 +68,15 @@
 	  Run every (hours)
       </span>
 		<select name='interval' class="form-control">
-		
-			<option>0.5</option>
-			<option>1.0</option>
-			<option>2.0</option>
-			<option>3.0</option>
-			<option>4.0</option>
-			<option>5.0</option>
-			<option>6.0</option>
-			<option>12.0</option>
-			<option>24.0</option>
+			<option  <?=$scheduler->{'sync-interval'}=='0.5'?'selected':''?> value='0.5'>0.5</option>
+			<option  <?=$scheduler->{'sync-interval'}=='1.0'?'selected':''?> value='1.0'>1.0</option>
+			<option  <?=$scheduler->{'sync-interval'}=='2.0'?'selected':''?> value='2.0'>2.0</option>
+			<option  <?=$scheduler->{'sync-interval'}=='3.0'?'selected':''?> value='3.0'>3.0</option>
+			<option  <?=$scheduler->{'sync-interval'}=='4.0'?'selected':''?> value='4.0'>4.0</option>
+			<option  <?=$scheduler->{'sync-interval'}=='5.0'?'selected':''?> value='5.0'>5.0</option>
+			<option  <?=$scheduler->{'sync-interval'}=='5.0'?'selected':''?> value='6.0'>6.0</option>
+			<option  <?=$scheduler->{'sync-interval'}=='12.0'?'selected':''?> value='12.0'>12.0</option>
+			<option  <?=$scheduler->{'sync-interval'}=='24.0'?'selected':''?> value='24.0'>24.0</option>
 		</select>
 
     </div><!-- /input-group -->
@@ -106,49 +108,49 @@
 		<td>  
 			<div class="checkbox">
 				<label>
-				  <input name='enabled[0]' type="checkbox"> &nbsp;
+				  <input <?=$scheduler->{'sun-enabled'}==1?'checked':'' ?> name='enabled[0]' type="checkbox"> &nbsp;
 				</label>
 			</div>
 		</td>
 		<td>  
 			<div class="checkbox">
 				<label>
-				  <input name='enabled[1]' type="checkbox"> &nbsp;
+				  <input <?=$scheduler->{'mon-enabled'}==1?'checked':'' ?>  name='enabled[1]' type="checkbox"> &nbsp;
 				</label>
 			</div>
 		</td>
 		<td>  
 			<div class="checkbox">
 				<label>
-				  <input name='enabled[2]' type="checkbox"> &nbsp;
+				  <input <?=$scheduler->{'tue-enabled'}==1?'checked':'' ?>  name='enabled[2]' type="checkbox"> &nbsp;
 				</label>
 			</div>
 		</td>
 		<td>  
 			<div class="checkbox">
 				<label>
-				  <input name='enabled[3]' type="checkbox"> &nbsp;
+				  <input  <?=$scheduler->{'wed-enabled'}==1?'checked':'' ?> name='enabled[3]' type="checkbox"> &nbsp;
 				</label>
 			</div>
 		</td>
 		<td>  
 			<div class="checkbox">
 				<label>
-				  <input name='enabled[4]' type="checkbox"> &nbsp;
+				  <input  <?=$scheduler->{'thu-enabled'}==1?'checked':'' ?>  name='enabled[4]' type="checkbox"> &nbsp;
 				</label>
 			</div>
 		</td>
 		<td>  
 			<div class="checkbox">
 				<label>
-				  <input name='enabled[5]' type="checkbox"> &nbsp;
+				  <input  <?=$scheduler->{'fri-enabled'}==1?'checked':'' ?>  name='enabled[5]' type="checkbox"> &nbsp;
 				</label>
 			</div>
 		</td>
 		<td>  
 			<div class="checkbox">
 				<label>
-				  <input name='enabled[6]' type="checkbox"> &nbsp;
+				  <input  <?=$scheduler->{'sat-enabled'}==1?'checked':'' ?> name='enabled[6]' type="checkbox"> &nbsp;
 				</label>
 			</div>
 		</td>
@@ -159,37 +161,37 @@
 		<th> <label>Start</label></th>
 		<td>
 		  <div class="form-group">
-			<input type="input" class="form-control" name="start[0]" placeholder="00:00">
+			<input value='<?=$scheduler->{'sun-start'}?>' type="input" class="form-control" name="start[0]" placeholder="00:00">
 		  </div>  
 		</td>
 				<td>
 		  <div class="form-group">
-			<input type="input" class="form-control" name="start[1]" placeholder="00:00">
+			<input value='<?=$scheduler->{'mon-start'}?>'  type="input" class="form-control" name="start[1]" placeholder="00:00">
 		  </div>  
 		</td>
 				<td>
 		  <div class="form-group">
-			<input type="input" class="form-control" name="start[2]" placeholder="00:00">
+			<input value='<?=$scheduler->{'tue-start'}?>'  type="input" class="form-control" name="start[2]" placeholder="00:00">
 		  </div>  
 		</td>
 				<td>
 		  <div class="form-group">
-			<input type="input" class="form-control" name="start[3]" placeholder="00:00">
+			<input value='<?=$scheduler->{'wed-start'}?>'  type="input" class="form-control" name="start[3]" placeholder="00:00">
 		  </div>  
 		</td>
 				<td>
 		  <div class="form-group">
-			<input type="input" class="form-control" name="start[4]" placeholder="00:00">
+			<input value='<?=$scheduler->{'thu-start'}?>'  type="input" class="form-control" name="start[4]" placeholder="00:00">
 		  </div>  
 		</td>
 				<td>
 		  <div class="form-group">
-			<input type="input" class="form-control" name="start[5]" placeholder="00:00">
+			<input value='<?=$scheduler->{'fri-start'}?>'  type="input" class="form-control" name="start[5]" placeholder="00:00">
 		  </div>  
 		</td>
 				<td>
 		  <div class="form-group">
-			<input type="input" class="form-control" name="start[6]" placeholder="00:00">
+			<input value='<?=$scheduler->{'sat-start'}?>'  type="input" class="form-control" name="start[6]" placeholder="00:00">
 		  </div>  
 		</td>
 		
@@ -198,37 +200,37 @@
 		<th> <div class="form-group">End</div></th>
 		<td>
 		  
-			<input type="input" class="form-control" name="end[0]" placeholder="00:00"/>
+			<input value='<?=$scheduler->{'sun-end'}?>'   type="input" class="form-control" name="end[0]" placeholder="00:00"/>
 		  
 		</td>
 				<td>
 		  <div class="form-group">
-			<input type="input" class="form-control" name="end[1]" placeholder="00:00">
+			<input value='<?=$scheduler->{'mon-end'}?>'  type="input" class="form-control" name="end[1]" placeholder="00:00">
 		  </div>  
 		</td>
 				<td>
 		  <div class="form-group">
-			<input type="input" class="form-control" name="end[2]" placeholder="00:00">
+			<input value='<?=$scheduler->{'tue-end'}?>'  type="input" class="form-control" name="end[2]" placeholder="00:00">
 		  </div>  
 		</td>
 				<td>
 		  <div class="form-group">
-			<input type="input" class="form-control" name="end[3]" placeholder="00:00">
+			<input value='<?=$scheduler->{'wed-end'}?>'  type="input" class="form-control" name="end[3]" placeholder="00:00">
 		  </div>  
 		</td>
 				<td>
 		  <div class="form-group">
-			<input type="input" class="form-control" name="end[4]" placeholder="00:00">
+			<input value='<?=$scheduler->{'thu-end'}?>'  type="input" class="form-control" name="end[4]" placeholder="00:00">
 		  </div>  
 		</td>
 				<td>
 		  <div class="form-group">
-			<input type="input" class="form-control" name="end[5]" placeholder="00:00">
+			<input value='<?=$scheduler->{'fri-end'}?>'  type="input" class="form-control" name="end[5]" placeholder="00:00">
 		  </div>  
 		</td>
 				<td>
 		  <div class="form-group">
-			<input type="input" class="form-control" name="end[6]" placeholder="00:00">
+			<input value='<?=$scheduler->{'sat-end'}?>'  type="input" class="form-control" name="end[6]" placeholder="00:00">
 		  </div>  
 		</td>
 		
@@ -335,8 +337,6 @@
    
 <script type="text/javascript">
 $(document).ready(function() {
-	$('input[name^="start"]').val("22:00");
-	$('input[name^="end"]').val("00:00");
 		
 	$('select[name^="alldays"]').change(function(){
 		$('input[name^="enabled"]').prop('checked',true);
@@ -395,6 +395,11 @@ $(document).ready(function() {
 	});
 $('input[name="weekdays"]:radio ').change(function (){
 
+	$('select[name^="10pm"]').attr('disabled',true);
+	$('select[name^="alldays"]').attr('disabled',true);
+	$('select[name^='+$(this).val()+']').attr('disabled',false).change();
+
+/*
 	switch ($(this).val())
 	{
 		case '10pm':
@@ -458,7 +463,10 @@ $('input[name="weekdays"]:radio ').change(function (){
 			break;
 		}
 	}
-});
+
+	*/
+	});
+$('input[name="weekdays"]:radio ').change();
 
 });
 /*
@@ -655,4 +663,5 @@ $('input[name="weekdays"]:radio ').change(function (){
 		
 	});
 */
+
 	</script>  

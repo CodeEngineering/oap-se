@@ -8,6 +8,7 @@ var  $connectors=array();
 		
 		$this->load->library('tank_auth');
 		$this->load->model('connector');
+		$this->load->model('scheduler');
 		$this->connectors=array();
 		$this->connectors[0]=new oap_connector();
 		$this->connectors[1]= new se_connector();
@@ -86,7 +87,7 @@ var  $connectors=array();
 		$data['connection']->description    ='';
 		$data['connection']->api_source     ='';
 		$data['connection']->api_target     ='';
-		
+		$data['connection']->schedule       =0;
 		if (!is_null($id))
 		{
 			$list=$this->connector->getAll(1, array('user'=>'desc'), array('id'=>$id)); 
@@ -129,7 +130,7 @@ Description:
 		$data['connection']->description    ='';
 		$data['connection']->api_source     ='';
 		$data['connection']->api_target     ='';
-		
+		$data['connection']->schedule       =0;
 		$id=is_null($id)?$this->saveform($id):$id;
 		
 		if (!is_null($id))
@@ -182,7 +183,7 @@ select source fields
 		$data['connection']->description    ='';
 		$data['connection']->api_source     ='';
 		$data['connection']->api_target     ='';
-		
+		$data['connection']->schedule       =0;
 		$id=is_null($id)?$this->saveform($id):$id;
 		
 		if (!is_null($id))
@@ -247,7 +248,7 @@ define source filter
 		$data['connection']->description    ='';
 		$data['connection']->api_source     ='';
 		$data['connection']->api_target     ='';
-		
+		$data['connection']->schedule       =0;
 		$id=is_null($id)?$this->saveform($id):$id;
 		
 		if (!is_null($id))
@@ -294,9 +295,9 @@ define source filter
 	}
 	
 /**
-** Form guide : step 4
+** Form guide : step 5
 **
-define source filter
+create schedule to sync data
 **/
 	
 	function step05($id=null)
@@ -305,14 +306,46 @@ define source filter
 			redirect('/auth/login/');
 		}
 		
-		$data['user_id']	= $this->tank_auth->get_user_id();
-		$data['username']	= $this->tank_auth->get_username();
-		$data['connection']=new stdClass();
+		$data['user_id']	                = $this->tank_auth->get_user_id();
+		$data['username']	                = $this->tank_auth->get_username();
+		$data['connection']                 =new stdClass();
+		$data['scheduler']                  =new stdClass();
+		$data['scheduler']->id              =0;
+		$data['scheduler']->weekdays_type   ='10pm';
+		$data['scheduler']->days            =0;
+		$data['scheduler']->{'sync-interval'}   ='0.5';
+		
+		$data['scheduler']->{'mon-enabled'}      =1;
+		$data['scheduler']->{'tue-enabled'}      =1;
+		$data['scheduler']->{'wed-enabled'}      =1;
+		$data['scheduler']->{'thu-enabled'}      =1;
+		$data['scheduler']->{'fri-enabled'}      =1;
+		$data['scheduler']->{'sat-enabled'}      =1;
+		$data['scheduler']->{'sun-enabled'}      =1;
+		
+		$data['scheduler']->{"mon-start"}    ="00:00";
+		$data['scheduler']->{"tue-start"}    ="00:00";
+		$data['scheduler']->{"wed-start"}    ="00:00";
+		$data['scheduler']->{"thu-start"}    ="00:00";
+		$data['scheduler']->{"fri-start"}    ="00:00";
+		$data['scheduler']->{"sat-start"}    ="00:00";
+		$data['scheduler']->{"sun-start"}    ="00:00";
+				
+		$data['scheduler']->{"mon-end"}      ="00:00";
+		$data['scheduler']->{"tue-end"}      ="00:00";
+		$data['scheduler']->{"wed-end"}      ="00:00";
+		$data['scheduler']->{"thu-end"}      ="00:00";
+		$data['scheduler']->{"fri-end"}      ="00:00";
+		$data['scheduler']->{"sat-end"}      ="00:00";
+		$data['scheduler']->{"sun-end"}      ="00:00";
+		
+		
 		$data['connection']->id             ='';
 		$data['connection']->connection_name='';
 		$data['connection']->description    ='';
 		$data['connection']->api_source     ='';
 		$data['connection']->api_target     ='';
+		$data['connection']->schedule       =0;
 		$id=is_null($id)?$this->saveform($id):$id;
 		if (!is_null($id))
 		{
@@ -322,6 +355,11 @@ define source filter
 		{
 		 redirect('/step01/', 'refresh');
 		}
+		if($data['connection']->schedule>0)
+		{
+			$schedule=$this->scheduler->getAll(1,null,array('id'=>$data['connection']->schedule));
+			$data['scheduler']=$schedule[0];
+		}
 		
 		
 		
@@ -330,6 +368,50 @@ define source filter
 		$this->load->view('step05',$data);
 		$this->load->view('footer');		
 	}	
+
+/**
+** Form guide : step 6
+**
+create summary
+**/
+	
+	function step06($id=null)
+	{
+		if (!$this->tank_auth->is_logged_in()) {
+			redirect('/auth/login/');
+		}
+		echo '<pre>';
+		//print_r($_POST);exit;
+		$data['user_id']	                = $this->tank_auth->get_user_id();
+		$data['username']	                = $this->tank_auth->get_username();
+		$data['connection']                 =new stdClass();
+		$data['scheduler']                  =new stdClass();
+		
+		$id=is_null($id)?$this->saveform($id):$id;
+		if (!is_null($id))
+		{
+			$list=$this->connector->getAll(1, array('user'=>'desc'), array('id'=>$id)); 
+			$data['connection']=$list[0];			
+			if($data['connection']->schedule>0)
+			{
+				$schedule=$this->scheduler->getAll(1,null,array('id'=>$data['connection']->schedule));
+				$data['scheduler']=$schedule[0];
+			}
+			
+		}else
+		{
+		 redirect('/step01/', 'refresh');
+		}
+		print_r($data);
+		
+		
+		
+		header('Content-Type: text/html; charset=utf-8');
+		$this->load->view('header',array('cal'=>true));
+		$this->load->view('step06',$data);
+		$this->load->view('footer');		
+	}	
+
 	
 	function saveform($id=null)
 	{
@@ -383,6 +465,67 @@ define source filter
 				$filters=json_encode($filters);
 				$o->source_filter=$filters;
 				
+				break;
+			}
+			case 'step05'://schedule
+			{
+				
+				$o->id =(int)$this->input->post('id');
+				$schedule=new stdclass;
+				
+				$schedule->id=(int)$this->input->post('schedule');//same as $connection->schedule
+				$schedule->userid=$this->tank_auth->get_user_id();
+				$schedule->connectionID=(int)$this->input->post('connectionid');
+				$schedule->weekdays_type=$this->input->post('weekdays');
+				
+				$start__=$this->input->post('start');
+				$end__=$this->input->post('end');
+				$enabled=$this->input->post('enabled');
+				$weekdays=$this->input->post('weekdays');
+				$days=$this->input->post($weekdays);
+				
+				$schedule->{'mon-enabled'}=isset($enabled[1])?1:0;
+				$schedule->{'tue-enabled'}=isset($enabled[2])?1:0;
+				$schedule->{'wed-enabled'}=isset($enabled[3])?1:0;
+				$schedule->{'thu-enabled'}=isset($enabled[4])?1:0;
+				$schedule->{'fri-enabled'}=isset($enabled[5])?1:0;
+				$schedule->{'sat-enabled'}=isset($enabled[6])?1:0;
+				$schedule->{'sun-enabled'}=isset($enabled[0])?1:0;
+				$start=array(0,0,0,0,0,0,0);
+				$end=array(0,0,0,0,0,0,0);
+				foreach($enabled as $key=>$en)
+				{
+					$start[$key]=$start__[$key];
+					$end[$key]=$end__[$key];
+				}
+				$schedule->{'mon-start'}=$start[1];
+				$schedule->{'tue-start'}=$start[2];
+				$schedule->{'wed-start'}=$start[3];
+				$schedule->{'thu-start'}=$start[4];
+				$schedule->{'fri-start'}=$start[5];
+				$schedule->{'sat-start'}=$start[6];
+				$schedule->{'sun-start'}=$start[0];
+				$schedule->{'mon-end'}=$end[1];
+				$schedule->{'tue-end'}=$end[2];
+				$schedule->{'wed-end'}=$end[3];
+				$schedule->{'thu-end'}=$end[4];
+				$schedule->{'fri-end'}=$end[5];
+				$schedule->{'sat-end'}=$end[6];
+				$schedule->{'sun-end'}=$end[0];
+				$schedule->{'sync-interval'}=$this->input->post('interval');;
+				if($schedule->id>0)
+				{
+					$o->schedule=$schedule->id;
+					$this->scheduler->update($schedule);
+				}else
+				{
+					unset($schedule->id);
+					$this->scheduler->create($schedule);
+					$o->schedule=$this->scheduler->lastid();
+				}
+				
+				$o->id =(int)$this->input->post('id');
+				$o->connectionID =(int)$this->input->post('id');
 				break;
 			}
 			
