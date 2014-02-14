@@ -322,22 +322,22 @@ create schedule to sync data
 		$data['scheduler']->{'fri-enabled'}      =1;
 		$data['scheduler']->{'sat-enabled'}      =1;
 		$data['scheduler']->{'sun-enabled'}      =1;
-		
-		$data['scheduler']->{"mon-start"}    ="00:00";
-		$data['scheduler']->{"tue-start"}    ="00:00";
-		$data['scheduler']->{"wed-start"}    ="00:00";
-		$data['scheduler']->{"thu-start"}    ="00:00";
-		$data['scheduler']->{"fri-start"}    ="00:00";
-		$data['scheduler']->{"sat-start"}    ="00:00";
-		$data['scheduler']->{"sun-start"}    ="00:00";
+		$defualt=strtotime("00:00");
+		$data['scheduler']->{"mon-start"}    =$defualt;
+		$data['scheduler']->{"tue-start"}    =$defualt;
+		$data['scheduler']->{"wed-start"}    =$defualt;
+		$data['scheduler']->{"thu-start"}    =$defualt;
+		$data['scheduler']->{"fri-start"}    =$defualt;
+		$data['scheduler']->{"sat-start"}    =$defualt;
+		$data['scheduler']->{"sun-start"}    =$defualt;
 				
-		$data['scheduler']->{"mon-end"}      ="00:00";
-		$data['scheduler']->{"tue-end"}      ="00:00";
-		$data['scheduler']->{"wed-end"}      ="00:00";
-		$data['scheduler']->{"thu-end"}      ="00:00";
-		$data['scheduler']->{"fri-end"}      ="00:00";
-		$data['scheduler']->{"sat-end"}      ="00:00";
-		$data['scheduler']->{"sun-end"}      ="00:00";
+		$data['scheduler']->{"mon-end"}      =$defualt;
+		$data['scheduler']->{"tue-end"}      =$defualt;
+		$data['scheduler']->{"wed-end"}      =$defualt;
+		$data['scheduler']->{"thu-end"}      =$defualt;
+		$data['scheduler']->{"fri-end"}      =$defualt;
+		$data['scheduler']->{"sat-end"}      =$defualt;
+		$data['scheduler']->{"sun-end"}      =$defualt;
 		
 		
 		$data['connection']->id             ='';
@@ -380,7 +380,7 @@ create summary
 		if (!$this->tank_auth->is_logged_in()) {
 			redirect('/auth/login/');
 		}
-		echo '<pre>';
+		//echo '<pre>';
 		//print_r($_POST);exit;
 		$data['user_id']	                = $this->tank_auth->get_user_id();
 		$data['username']	                = $this->tank_auth->get_username();
@@ -402,9 +402,10 @@ create summary
 		{
 		 redirect('/step01/', 'refresh');
 		}
-		print_r($data);
+		//print_r($data);
 		
-		
+		$data['connection']->api_source=$this->connectors[$data['connection']->api_source]->name;
+		$data['connection']->api_target=$this->connectors[$data['connection']->api_target]->name;
 		
 		header('Content-Type: text/html; charset=utf-8');
 		$this->load->view('header',array('cal'=>true));
@@ -412,7 +413,10 @@ create summary
 		$this->load->view('footer');		
 	}	
 
+	function step07($id=null)
+	{
 	
+	}
 	function saveform($id=null)
 	{
 		if (!isset($_POST['form'])){return false;}
@@ -474,7 +478,7 @@ create summary
 				$schedule=new stdclass;
 				
 				$schedule->id=(int)$this->input->post('schedule');//same as $connection->schedule
-				$schedule->userid=$this->tank_auth->get_user_id();
+				$schedule->userID=$this->tank_auth->get_user_id();
 				$schedule->connectionID=(int)$this->input->post('connectionid');
 				$schedule->weekdays_type=$this->input->post('weekdays');
 				
@@ -483,7 +487,8 @@ create summary
 				$enabled=$this->input->post('enabled');
 				$weekdays=$this->input->post('weekdays');
 				$days=$this->input->post($weekdays);
-				
+				print_r($start__);
+				print_r($end__);
 				$schedule->{'mon-enabled'}=isset($enabled[1])?1:0;
 				$schedule->{'tue-enabled'}=isset($enabled[2])?1:0;
 				$schedule->{'wed-enabled'}=isset($enabled[3])?1:0;
@@ -498,21 +503,22 @@ create summary
 					$start[$key]=$start__[$key];
 					$end[$key]=$end__[$key];
 				}
-				$schedule->{'mon-start'}=$start[1];
-				$schedule->{'tue-start'}=$start[2];
-				$schedule->{'wed-start'}=$start[3];
-				$schedule->{'thu-start'}=$start[4];
-				$schedule->{'fri-start'}=$start[5];
-				$schedule->{'sat-start'}=$start[6];
-				$schedule->{'sun-start'}=$start[0];
-				$schedule->{'mon-end'}=$end[1];
-				$schedule->{'tue-end'}=$end[2];
-				$schedule->{'wed-end'}=$end[3];
-				$schedule->{'thu-end'}=$end[4];
-				$schedule->{'fri-end'}=$end[5];
-				$schedule->{'sat-end'}=$end[6];
-				$schedule->{'sun-end'}=$end[0];
-				$schedule->{'sync-interval'}=$this->input->post('interval');;
+				
+				$schedule->{'mon-start'}=strtotime($start[1]);
+				$schedule->{'tue-start'}=strtotime($start[2]);
+				$schedule->{'wed-start'}=strtotime($start[3]);
+				$schedule->{'thu-start'}=strtotime($start[4]);
+				$schedule->{'fri-start'}=strtotime($start[5]);
+				$schedule->{'sat-start'}=strtotime($start[6]);
+				$schedule->{'sun-start'}=strtotime($start[0]);
+				$schedule->{'mon-end'}=strtotime($end[1]);
+				$schedule->{'tue-end'}=strtotime($end[2]);
+				$schedule->{'wed-end'}=strtotime($end[3]);
+				$schedule->{'thu-end'}=strtotime($end[4]);
+				$schedule->{'fri-end'}=strtotime($end[5]);
+				$schedule->{'sat-end'}=strtotime($end[6]);
+				$schedule->{'sun-end'}=strtotime($end[0]);
+				$schedule->{'sync_interval'}=$this->input->post('sync_interval');;
 				if($schedule->id>0)
 				{
 					$o->schedule=$schedule->id;
@@ -523,7 +529,8 @@ create summary
 					$this->scheduler->create($schedule);
 					$o->schedule=$this->scheduler->lastid();
 				}
-				
+				$o->last_run=strtotime('yesterday');
+				$o->nextrun=strtotime('yesterday');
 				$o->id =(int)$this->input->post('id');
 				$o->connectionID =(int)$this->input->post('id');
 				break;
@@ -709,7 +716,11 @@ create summary
 		$this->load->view('content1',$data);
 		$this->load->view('footer');		
 	}
-	
+function test()
+{
+echo date('w',time());
+
+}
 
 }
 

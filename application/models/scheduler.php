@@ -10,13 +10,51 @@
 class scheduler extends Acicrud {
 
     //CONSTRUCTOR   
-   
+private $days=array('sun','mon','tue','wed','thu','fri','sat');   
     public function __construct()
     {
         parent::__construct('scheduler');
     }
 
     //CUSTOM METHODS
+	public function get_schedule()
+	{
+		$days=$this->days;
+		$now=strtotime(date('H:i'));
+		$day=date('w',time());//0-sunday
+		$sql="select * from `scheduler` where `{$days[$day]}-enabled`=1 &&  `{$days[$day]}-start`<=$now && `{$days[$day]}-end`>=$now";
+		$res= $this->db->query($sql);
+		return $res->result();
+	}
+	private function next_run($last_run,$interval,$enabled=true)
+	{
+		if ($enabled)
+		{
+			return $last_run+ $interval*60*60;
+		}else
+		{
+			return strtotime('Jan 1 , 2000');
+		}
+	}
+	
+	private function next_run2day($start,$end,$interval)
+	{
+		$earliest=$start;
+		$latest=$end;
+		$now=strtotime(date('H:i'));
+		if ($now>$latest){
+		//next enabled day
+		}
+		elseif($now<$earliest)
+		{
+			return strtotime( date("Y-m-d"). ' ' .date('H:i',$start));
+		}
+		else
+		{
+		//next run between start and end
+		
+		}
+	}
      
 }
  

@@ -67,16 +67,16 @@
       <span class="input-group-addon">
 	  Run every (hours)
       </span>
-		<select name='interval' class="form-control">
-			<option  <?=$scheduler->{'sync-interval'}=='0.5'?'selected':''?> value='0.5'>0.5</option>
-			<option  <?=$scheduler->{'sync-interval'}=='1.0'?'selected':''?> value='1.0'>1.0</option>
-			<option  <?=$scheduler->{'sync-interval'}=='2.0'?'selected':''?> value='2.0'>2.0</option>
-			<option  <?=$scheduler->{'sync-interval'}=='3.0'?'selected':''?> value='3.0'>3.0</option>
-			<option  <?=$scheduler->{'sync-interval'}=='4.0'?'selected':''?> value='4.0'>4.0</option>
-			<option  <?=$scheduler->{'sync-interval'}=='5.0'?'selected':''?> value='5.0'>5.0</option>
-			<option  <?=$scheduler->{'sync-interval'}=='5.0'?'selected':''?> value='6.0'>6.0</option>
-			<option  <?=$scheduler->{'sync-interval'}=='12.0'?'selected':''?> value='12.0'>12.0</option>
-			<option  <?=$scheduler->{'sync-interval'}=='24.0'?'selected':''?> value='24.0'>24.0</option>
+		<select name='sync_interval' class="form-control">
+			<option  <?=$scheduler->{'sync_interval'}=='0.5'?'selected':''?> value='0.5'>0.5</option>
+			<option  <?=$scheduler->{'sync_interval'}=='1.0'?'selected':''?> value='1.0'>1.0</option>
+			<option  <?=$scheduler->{'sync_interval'}=='2.0'?'selected':''?> value='2.0'>2.0</option>
+			<option  <?=$scheduler->{'sync_interval'}=='3.0'?'selected':''?> value='3.0'>3.0</option>
+			<option  <?=$scheduler->{'sync_interval'}=='4.0'?'selected':''?> value='4.0'>4.0</option>
+			<option  <?=$scheduler->{'sync_interval'}=='5.0'?'selected':''?> value='5.0'>5.0</option>
+			<option  <?=$scheduler->{'sync_interval'}=='5.0'?'selected':''?> value='6.0'>6.0</option>
+			<option  <?=$scheduler->{'sync_interval'}=='12.0'?'selected':''?> value='12.0'>12.0</option>
+			<option  <?=$scheduler->{'sync_interval'}=='24.0'?'selected':''?> value='24.0'>24.0</option>
 		</select>
 
     </div><!-- /input-group -->
@@ -161,37 +161,37 @@
 		<th> <label>Start</label></th>
 		<td>
 		  <div class="form-group">
-			<input value='<?=$scheduler->{'sun-start'}?>' type="input" class="form-control" name="start[0]" placeholder="00:00">
+			<input value='<?=date('H:i',$scheduler->{'sun-start'})?>' type="input" class="form-control" name="start[0]" placeholder="00:00">
 		  </div>  
 		</td>
 				<td>
 		  <div class="form-group">
-			<input value='<?=$scheduler->{'mon-start'}?>'  type="input" class="form-control" name="start[1]" placeholder="00:00">
+			<input value='<?=date('H:i',$scheduler->{'mon-start'})?>'  type="input" class="form-control" name="start[1]" placeholder="00:00">
 		  </div>  
 		</td>
 				<td>
 		  <div class="form-group">
-			<input value='<?=$scheduler->{'tue-start'}?>'  type="input" class="form-control" name="start[2]" placeholder="00:00">
+			<input value='<?=date('H:i',$scheduler->{'tue-start'})?>'  type="input" class="form-control" name="start[2]" placeholder="00:00">
 		  </div>  
 		</td>
 				<td>
 		  <div class="form-group">
-			<input value='<?=$scheduler->{'wed-start'}?>'  type="input" class="form-control" name="start[3]" placeholder="00:00">
+			<input value='<?=date('H:i',$scheduler->{'wed-start'})?>'  type="input" class="form-control" name="start[3]" placeholder="00:00">
 		  </div>  
 		</td>
 				<td>
 		  <div class="form-group">
-			<input value='<?=$scheduler->{'thu-start'}?>'  type="input" class="form-control" name="start[4]" placeholder="00:00">
+			<input value='<?=date('H:i',$scheduler->{'thu-start'})?>'  type="input" class="form-control" name="start[4]" placeholder="00:00">
 		  </div>  
 		</td>
 				<td>
 		  <div class="form-group">
-			<input value='<?=$scheduler->{'fri-start'}?>'  type="input" class="form-control" name="start[5]" placeholder="00:00">
+			<input value='<?=date('H:i',$scheduler->{'fri-start'})?>'  type="input" class="form-control" name="start[5]" placeholder="00:00">
 		  </div>  
 		</td>
 				<td>
 		  <div class="form-group">
-			<input value='<?=$scheduler->{'sat-start'}?>'  type="input" class="form-control" name="start[6]" placeholder="00:00">
+			<input value='<?=date('H:i',$scheduler->{'sat-start'})?>'  type="input" class="form-control" name="start[6]" placeholder="00:00">
 		  </div>  
 		</td>
 		
@@ -200,37 +200,37 @@
 		<th> <div class="form-group">End</div></th>
 		<td>
 		  
-			<input value='<?=$scheduler->{'sun-end'}?>'   type="input" class="form-control" name="end[0]" placeholder="00:00"/>
+			<input value='<?=date('H:i',$scheduler->{'sun-end'})?>'   type="input" class="form-control" name="end[0]" placeholder="00:00"/>
 		  
 		</td>
 				<td>
 		  <div class="form-group">
-			<input value='<?=$scheduler->{'mon-end'}?>'  type="input" class="form-control" name="end[1]" placeholder="00:00">
+			<input value='<?=date('H:i',$scheduler->{'mon-end'})?>'  type="input" class="form-control" name="end[1]" placeholder="00:00">
 		  </div>  
 		</td>
 				<td>
 		  <div class="form-group">
-			<input value='<?=$scheduler->{'tue-end'}?>'  type="input" class="form-control" name="end[2]" placeholder="00:00">
+			<input value='<?=date('H:i',$scheduler->{'tue-end'})?>'  type="input" class="form-control" name="end[2]" placeholder="00:00">
 		  </div>  
 		</td>
 				<td>
 		  <div class="form-group">
-			<input value='<?=$scheduler->{'wed-end'}?>'  type="input" class="form-control" name="end[3]" placeholder="00:00">
+			<input value='<?=date('H:i',$scheduler->{'wed-end'})?>'  type="input" class="form-control" name="end[3]" placeholder="00:00">
 		  </div>  
 		</td>
 				<td>
 		  <div class="form-group">
-			<input value='<?=$scheduler->{'thu-end'}?>'  type="input" class="form-control" name="end[4]" placeholder="00:00">
+			<input value='<?=date('H:i',$scheduler->{'thu-end'})?>'  type="input" class="form-control" name="end[4]" placeholder="00:00">
 		  </div>  
 		</td>
 				<td>
 		  <div class="form-group">
-			<input value='<?=$scheduler->{'fri-end'}?>'  type="input" class="form-control" name="end[5]" placeholder="00:00">
+			<input value='<?=date('H:i',$scheduler->{'fri-end'})?>'  type="input" class="form-control" name="end[5]" placeholder="00:00">
 		  </div>  
 		</td>
 				<td>
 		  <div class="form-group">
-			<input value='<?=$scheduler->{'sat-end'}?>'  type="input" class="form-control" name="end[6]" placeholder="00:00">
+			<input value='<?=date('H:i',$scheduler->{'sat-end'})?>'  type="input" class="form-control" name="end[6]" placeholder="00:00">
 		  </div>  
 		</td>
 		
