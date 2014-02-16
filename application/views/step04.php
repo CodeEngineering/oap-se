@@ -116,7 +116,19 @@
 var filter_types=<?=json_encode($api_source_filter)?>;
 var field_types=<?=json_encode($api_source_type)?>;
 
-
+	$('.delete_filter').click(function(){
+		$(this).parents('tr').remove();
+	});
+	$('.edit_filter').click(function(){
+		tr=$(this).parents('tr');
+		//$('tr').find('td:eq(0)')
+		$("#api_source_fields").val($(tr).find('input.filter_field').val());//.attr('selected', true);
+		$("#api_source_filter_operation").val($(tr).find('input.filter_operation').val());
+		$("#filter-value").val($(tr).find('input.filter_value').val());
+		$(this).parents('tr').remove();
+		
+		
+	});
 $('#create-filter').click(function(){
 tr="<tr><td>"+$('#api_source_fields option:selected').text()+"</td><td>"+$('#api_source_filter_operation option:selected').text()+"</td><td>"+$('#filter-value').val()+"</td><td><span class=' edit_filter glyphicon glyphicon-edit'></span>&nbsp;&nbsp;<span class='delete_filter glyphicon glyphicon-remove'></span></td></tr>";
 $('#filter_list > tbody:last').append(tr);

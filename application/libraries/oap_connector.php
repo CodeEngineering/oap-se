@@ -88,8 +88,10 @@ function Read($point,$data=null)
 }
 function Search($point,$data=null)
 {
-	$this->form_fields->data=$data;
-	$this->form_fields->reqType='fetch';
+	$data=$this->search_xml($data);
+	//echo $data;exit;
+	$this->form_fields['data']=$data;
+	$this->form_fields['reqType']='search';
 	$res= $this->execute($point,$this->form_fields);
 	return $res;	
 }
@@ -165,17 +167,17 @@ var $request=array('key','search','fetch','add','update','fetch_tag','fetch_sequ
 	{
 		
 		$search='';
-		foreach ($fields as $field=>$search)
+		foreach ($fields->field as $key=>$field)
 		{
 			$entry   ="<equation>";
-			$entry  .="<field>".$search['field']."</field>";
-			$entry  .="<op>".$search['operator']."</op>";
-			$entry  .="<value>".$search['term']."</value>";
+			$entry  .="<field>".$this->users_fields['Contact Information'][$field]['field']."</field>";
+			$entry  .="<op>".$fields->operation[$key]."</op>";
+			$entry  .="<value>".$fields->value[$key]."</value>";
 			$entry  .="</equation>";
 			$search .=$entry;
 		}
 		
-		return $search;
+		return '<search>'.$search.'</search>';
 	}
 	function fetch_xml($ids)
 	{
@@ -262,10 +264,12 @@ var $request=array('key','search','fetch','add','update','fetch_tag','fetch_sequ
 
 			$this->ci->curl->create($point);
 			$this->ci->curl->post($form);
+			
 			//$this->ci->curl->proxy('http://cache2.lrdc.lexmark.com'); 
 			//$this->ci->curl->proxy_login('mtel', 'Lexmark#321');
 			$res= $this->ci->curl->execute();
-			$res=$this->ci->format->factory($res,'xml')->to_array();
+			//$res=$this->ci->format->factory($res,'xml')->to_array();
+			//print_r($res);
 			return $res;
 			
 

@@ -1,7 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Sync extends CI_Controller {
-
+private $apis=array();
 	function __construct()
 	{
 		parent::__construct();
@@ -10,6 +10,11 @@ class Sync extends CI_Controller {
 		//$this->load->library('tank_auth');
 		$this->load->model('sync_log');
 		$this->load->model('scheduler');
+		$this->load->model('connector');
+		$this->load->model('api');
+		$this->scheduler->get_todays_schedule();
+		$this->scheduler->get_todays_schedule();
+		$this->apis=$this->api->getall();;
 	}
 
 	public function index()
@@ -17,16 +22,45 @@ class Sync extends CI_Controller {
 		$this->load->model('sync_log');
 		$this->load->model('scheduler');
 		$scheduler=new Scheduler();
-		echo $scheduler->get_schedule();
+		echo "test";
 	}
-	function excute()
+	public function excute()
 	{
-		$scheduler=new Scheduler();
-		$sched=$scheduler->get_schedule();
+		$jobs=$this->connector->get_scheduled_job();
+		print_r($jobs);
+		
+		
 		
 	}
+	public function admin()
+	{
+		$data=null;
+		$data['jobs']=$this->connector->get_scheduled_job_today();
+		foreach ($data['jobs'] as $key=>$job)
+		{
+			$data['jobs'][$key]->api_source=$this->apis[$data['jobs'][$key]->api_source];
+			$data['jobs'][$key]->api_target=$this->apis[$data['jobs'][$key]->api_target];
+		}
+		$this->load->view('header');
+		$this->load->view('admin',$data);
+		$this->load->view('footer');	
+	
+	}
 
-
+function runnow()
+{
+	
+	//print_r($_POST);
+	$id=$this->input->post('connectionid');
+	$connection=$this->connector->read($id);
+	$search_filter=json_decode($connection->source_filter);
+	//source
+	$tmp=$this->apis[$connection->api_source]->obj_name;
+	$api_source=new $tmp();
+	$res=$api_source->search($this->apis[$connection->api_source]->search_point,$search_filter);
+	//$res=$this->ci->format->factory($res,'xml')->to_array();
+	print_r($res);
+}
 
 }
 

@@ -1,6 +1,7 @@
 <?php
 //date_default_timezone_set('utc');
 ini_set('date.timezone', 'Asia/Manila');
+//ini_set('date.timezone', 'utc');
 /*
  *---------------------------------------------------------------
  * APPLICATION ENVIRONMENT

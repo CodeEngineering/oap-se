@@ -17,7 +17,29 @@ class connector extends Acicrud {
     }
 
     //CUSTOM METHODS
-     
+ 
+	function get_scheduled_job()
+	{
+	
+		$now=time();
+		$now1=mktime(date('H',$now),date('i',$now)-15,date('s',$now),date('m',$now),date('d',$now),date('Y',$now));
+		$now2=mktime(date('H',$now),date('i',$now)+15,date('s',$now),date('m',$now),date('d',$now),date('Y',$now));
+		$sql="Select * from connector_map where nextrun>=$now1 and nextrun<=$now2";
+		//echo $sql; 
+		$res= $this->db->query($sql);
+		return $res->result();
+	}	
+	function get_scheduled_job_today()
+	{
+	
+		$now=time();
+		$now1=mktime(0,0,0,date('m',$now),date('d',$now),date('Y',$now));
+		$now2=mktime(23,59,59,date('m',$now),date('d',$now),date('Y',$now));
+		$sql="Select * from connector_map where nextrun>=$now1 and nextrun<=$now2";
+		//echo $sql; 
+		$res= $this->db->query($sql);
+		return $res->result();
+	}
 }
  
 ?>

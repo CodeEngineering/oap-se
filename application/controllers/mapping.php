@@ -718,8 +718,15 @@ create summary
 	}
 function test()
 {
-echo date('w',time());
-
+//$this->scheduler->get_todays_schedule();
+$now=time();
+$interval=1.5*60;
+$hr=(int) ($interval / 60);
+$min=$interval % 60;
+$start=strtotime('01:00');
+$end=strtotime('22:00');
+$interval=1.5;
+echo date('m-d-Y H:i:s',$this->scheduler->next_run2day($start,$end,$interval));
 }
 
 }
