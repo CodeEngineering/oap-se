@@ -50,10 +50,32 @@ function Fields($data='user')
 	
 	return $fields;
 }
-function Create($point,$data=null)
+function Create($point,$data=null,$fields)
 {
 
-	$res= $this->execute($point,$this->form_fields,'post');
+	foreach($data as $key=>$dat)
+	{
+		$this->form_fields=array();
+		$this->form_fields['K']='';
+		foreach($fields as $key2=>$field)
+		{
+			$this->form_fields[$this->users_fields[$field]['field']]=$dat[$key2];
+		}
+		if (array_key_exists ('displayname',$this->form_fields))
+		{
+			$this->form_fields['displayname']=preg_replace("~[\W\s]~", '',$this->form_fields['displayname']);
+		} 		//preg_replace('~[\W\s]~', '_', $filename);
+		if (array_key_exists ('username',$this->form_fields))
+		{
+			$this->form_fields['username']=preg_replace("~[\W\s]~", '',$this->form_fields['username']);
+		} 
+		
+		$this->form_fields['password']='socialengine';
+		//print_r($this->form_fields);
+		$res= $this->execute($point,$this->form_fields,'post');
+		//print_r( $res);
+		//exit;
+	}
 	return $res;
 
 
@@ -87,7 +109,10 @@ function Delete($point,$data=null)
 	return $res;	
 }
 
-
+/**
+Create: POST /restapi/users
+params: email, password, username 
+*/
 
 
 	function connect_toSE()

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Feb 16, 2014 at 11:17 PM
+-- Generation Time: Feb 17, 2014 at 04:38 PM
 -- Server version: 5.6.11-log
 -- PHP Version: 5.3.25
 
@@ -70,10 +70,8 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
 --
 
 INSERT INTO `ci_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-('2d15dc09480736669729071a52bcc837', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.107 Safari/537.36', 1392501458, 'a:6:{s:9:"user_data";s:0:"";s:7:"user_id";s:1:"1";s:8:"username";s:8:"Florante";s:5:"email";s:22:"florante.kho@gmail.com";s:4:"role";s:5:"admin";s:6:"status";s:1:"1";}'),
-('b68c5453593c928e674412f970f4e934', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.107 Safari/537.36', 1392571829, 'a:6:{s:9:"user_data";s:0:"";s:7:"user_id";s:1:"1";s:8:"username";s:8:"Florante";s:5:"email";s:22:"florante.kho@gmail.com";s:4:"role";s:5:"admin";s:6:"status";s:1:"1";}'),
-('b775de35122dc6ffe652a30b8a78245f', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.107 Safari/537.36', 1392533058, 'a:6:{s:9:"user_data";s:0:"";s:7:"user_id";s:1:"1";s:8:"username";s:8:"Florante";s:5:"email";s:22:"florante.kho@gmail.com";s:4:"role";s:5:"admin";s:6:"status";s:1:"1";}'),
-('cc4bc035e7ddc9f173d59ff585526ae7', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.107 Safari/537.36', 1392453898, 'a:6:{s:9:"user_data";s:0:"";s:7:"user_id";s:1:"1";s:8:"username";s:8:"Florante";s:5:"email";s:22:"florante.kho@gmail.com";s:4:"role";s:5:"admin";s:6:"status";s:1:"1";}');
+('60642e5a3ef1f4d4793f83e7d36ee304', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.107 Safari/537.36', 1392653676, 'a:6:{s:9:"user_data";s:0:"";s:7:"user_id";s:1:"1";s:8:"username";s:8:"Florante";s:5:"email";s:22:"florante.kho@gmail.com";s:4:"role";s:5:"admin";s:6:"status";s:1:"1";}'),
+('8bd572b09c05719b6110d1926ee23a58', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.107 Safari/537.36', 1392651014, 'a:6:{s:9:"user_data";s:0:"";s:7:"user_id";s:1:"1";s:8:"username";s:8:"Florante";s:5:"email";s:22:"florante.kho@gmail.com";s:4:"role";s:5:"admin";s:6:"status";s:1:"1";}');
 
 -- --------------------------------------------------------
 
@@ -111,7 +109,7 @@ INSERT INTO `connector_map` (`id`, `user`, `api_source`, `api_target`, `fields1`
 (6, 1, 0, 1, '{"1":"16","2":"5","3":"7","12":"2"}', '{"1":"email","2":"username","3":"displayname","12":"level_id"}', '{"1":{"OAP":["16","E-Mail"],"SE":["1","email"]},"2":{"OAP":["5","First Name"],"SE":["2","username"]},"3":{"OAP":["7","Last Name"],"SE":["3","displayname"]}}', '["1","2","3"]', '', '', '', '', '', 0, 0),
 (7, 1, 0, 1, '{"1":"6","2":"5","3":"7","12":"2"}', '{"1":"email","2":"username","3":"displayname","12":"level_id"}', '{"1":{"OAP":["6","Middle Name"],"SE":["1","email"]},"2":{"OAP":["5","First Name"],"SE":["2","username"]},"3":{"OAP":["7","Last Name"],"SE":["3","displayname"]}}', '["1","2","3"]', '', '', '', '', '', 0, 0),
 (8, 0, 0, 1, '', '', '', '', '', '', 'my connection', 'new connection', '', 0, 0),
-(9, 0, 0, 1, '', '', '', '["5","7","5"]', '["1","2","3"]', '{"field":["5"],"operation":["c"],"value":["flo"]}', 'My first connection', 'this is a test', '2', 1392393600, 1392595200),
+(9, 0, 0, 1, '', '', '', '["16","5","5"]', '["1","2","3"]', '{"field":["5"],"operation":["c"],"value":["flor"]}', 'My first connection', 'this is a test', '2', 1392480000, 1392681600),
 (10, 0, 0, 0, '', '', '', '', '', '', '', '', '1', 0, 0);
 
 -- --------------------------------------------------------
@@ -226,7 +224,7 @@ CREATE TABLE IF NOT EXISTS `scheduler` (
 
 INSERT INTO `scheduler` (`id`, `connectionID`, `userID`, `weekdays_type`, `days`, `mon-enabled`, `tue-enabled`, `wed-enabled`, `thu-enabled`, `fri-enabled`, `sat-enabled`, `sun-enabled`, `mon-start`, `tue-start`, `wed-start`, `thu-start`, `fri-start`, `sat-start`, `sun-start`, `mon-end`, `tue-end`, `wed-end`, `thu-end`, `fri-end`, `sat-end`, `sun-end`, `sync_interval`, `enabled`) VALUES
 (1, 9, 0, 'alldays', 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 24, 24, 24, 24, 0, 0, '0', 1),
-(2, 9, 1, '10pm', 0, 1, 1, 1, 1, 1, 0, 1, 1392480000, 1392480000, 1392480000, 1392480000, 1392537600, 0, 1392480000, 1392480000, 1392480000, 1392480000, 1392480000, 1392534000, 0, 1392559200, '3', 1);
+(2, 9, 1, '10pm', 0, 1, 1, 1, 1, 1, 0, 0, 1392566400, 1392566400, 1392566400, 1392566400, 1392624000, 0, 0, 1392649200, 1392566400, 1392566400, 1392566400, 1392620400, 0, 0, '3', 1);
 
 -- --------------------------------------------------------
 
@@ -272,7 +270,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `email`, `role_id`, `activated`, `banned`, `ban_reason`, `new_password_key`, `new_password_requested`, `new_email`, `new_email_key`, `last_ip`, `last_login`, `created`, `modified`) VALUES
-(1, 'Florante', '$2a$08$C3M0mvlJuDfv.P1CYrdxnejVxBJP69E5BVJn51h1DkTu.TvjopfG6', 'florante.kho@gmail.com', 1, 1, 0, NULL, NULL, NULL, NULL, NULL, '127.0.0.1', '2014-02-16 22:45:28', '2014-01-14 13:34:47', '2014-02-16 14:45:28');
+(1, 'Florante', '$2a$08$C3M0mvlJuDfv.P1CYrdxnejVxBJP69E5BVJn51h1DkTu.TvjopfG6', 'florante.kho@gmail.com', 1, 1, 0, NULL, NULL, NULL, NULL, NULL, '127.0.0.1', '2014-02-17 23:30:14', '2014-01-14 13:34:47', '2014-02-17 15:30:14');
 
 -- --------------------------------------------------------
 

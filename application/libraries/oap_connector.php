@@ -86,14 +86,27 @@ function Read($point,$data=null)
 	$res= $this->execute($point,$this->form_fields);
 	return $res;	
 }
-function Search($point,$data=null)
+function Search($point,$data=null,$fieldout=null)
 {
 	$data=$this->search_xml($data);
 	//echo $data;exit;
 	$this->form_fields['data']=$data;
 	$this->form_fields['reqType']='search';
 	$res= $this->execute($point,$this->form_fields);
-	return $res;	
+	$result=array();
+	foreach ($res['contact'] as $key=>$data)
+	{
+		$tmp=array();
+		foreach($fieldout as $key=>$field)
+		{
+			if(!is_array($data['Group_Tag'][0]['field'][$field]))
+			{$tmp[$key]=$data['Group_Tag'][0]['field'][$field];}
+			else
+			{$tmp[$key]='';}
+		}
+		$result[]=$tmp;
+	}
+	return $result;	
 }
 function Update($point,$data=null)
 {
@@ -264,11 +277,12 @@ var $request=array('key','search','fetch','add','update','fetch_tag','fetch_sequ
 
 			$this->ci->curl->create($point);
 			$this->ci->curl->post($form);
-			
+			//print_r($form);
 			//$this->ci->curl->proxy('http://cache2.lrdc.lexmark.com'); 
 			//$this->ci->curl->proxy_login('mtel', 'Lexmark#321');
-			$res= $this->ci->curl->execute();
-			//$res=$this->ci->format->factory($res,'xml')->to_array();
+			$res= '<?xml version="1.0" encoding="UTF-8"?>'.$this->ci->curl->execute();
+			//echo 'result:'.$res;
+			$res=$this->ci->format->factory($res,'xml')->to_array();
 			//print_r($res);
 			return $res;
 			

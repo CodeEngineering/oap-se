@@ -31,7 +31,7 @@
 					<?php
 					}
 				?>
-				<?=print_r($jobs,1)?>
+				
 			</table>
           </div>
         </div>
