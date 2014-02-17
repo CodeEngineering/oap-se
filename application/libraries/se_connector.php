@@ -52,11 +52,12 @@ function Fields($data='user')
 }
 function Create($point,$data=null,$fields)
 {
-
+$counter=0;
 	foreach($data as $key=>$dat)
 	{
 		$this->form_fields=array();
 		$this->form_fields['K']='';
+		
 		foreach($fields as $key2=>$field)
 		{
 			$this->form_fields[$this->users_fields[$field]['field']]=$dat[$key2];
@@ -73,10 +74,14 @@ function Create($point,$data=null,$fields)
 		$this->form_fields['password']='socialengine';
 		//print_r($this->form_fields);
 		$res= $this->execute($point,$this->form_fields,'post');
-		//print_r( $res);
-		//exit;
+		print_r($res);
+		if(isset($res['user_id']))
+		{
+			$counter ++;
+		}
+		
 	}
-	return $res;
+	return $counter;
 
 
 }

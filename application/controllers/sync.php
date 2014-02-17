@@ -59,12 +59,17 @@ function runnow()
 	$api_source=new $tmp();
 	
 	$res=$api_source->search($this->apis[$connection->api_source]->search_point,$search_filter,json_decode($connection->source_fields));
-
+	$total_found=count($res);
 	$tmp=$this->apis[$connection->api_target]->obj_name;
 	$api_target=new $tmp();
-	$api_target->Create($this->apis[$connection->api_target]->write_point,$res,json_decode($connection->target_fields));
+	$sync_count=$api_target->Create($this->apis[$connection->api_target]->write_point,$res,json_decode($connection->target_fields));
 	//$res=$this->ci->format->factory($res,'xml')->to_array();
 	//print_r($res);
+	$data['Total']=$total_found;
+	$data['Sync']=$sync_count;
+	//header('Content-Type: application/json');
+//	echo json_encode($data);
+	
 }
 
 }

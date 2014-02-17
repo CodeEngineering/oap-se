@@ -39,7 +39,10 @@
 <script>
 function runnow(id)
 {
-	$.post("<?=base_url()."Sync/runnow/"?>",{connectionid:id});
+	$.post("<?=base_url()."Sync/runnow/"?>",{connectionid:id},function(data){
+	
+	alert(data.Sync+'/'+data.Total + 'sync');
+	});;
 	return false;
 }
 </script>
