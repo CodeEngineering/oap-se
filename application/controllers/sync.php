@@ -42,7 +42,7 @@ private $apis=array();
 			$data['jobs'][$key]->api_target=$this->apis[$data['jobs'][$key]->api_target];
 			$log=$this->sync_log->get_lastlog($job->id);
 			//print_r($job);
-			if (($log[0]->id)>0){
+			if (count($log)>0){
 				$data['jobs'][$key]->lastlog=$log[0]->id;
 				$data['jobs'][$key]->logdate=$log[0]->excuted;
 			}
