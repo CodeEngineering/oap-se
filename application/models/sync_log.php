@@ -17,7 +17,13 @@ class sync_log extends Acicrud {
     }
 
     //CUSTOM METHODS
-     
+     function get_lastlog($connectionid)
+	 {
+		//$sql="select MAX(id) as id ,excuted from sync_log where connectionid=$connectionid";
+		$sql="SELECT * FROM `sync_log` WHERE `connectionid`=$connectionid order by id desc limit 1";
+		$res= $this->db->query($sql);
+		return $res->result();
+	 }
 }
  
 ?>
