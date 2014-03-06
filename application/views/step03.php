@@ -34,9 +34,9 @@
 					<?php
 					//$api_source_fields[$connection->source_fields[$counter]]
 					
-					$selection=array_key_exists($source_fields[$counter],$api_source_fields)?$source_fields[$counter]:'';
+					//$selection=array_key_exists($source_fields[$counter],$api_source_fields)?$source_fields[$counter]:'';
 					?>
-					<?=form_dropdown('api_source_fields[]',$api_source_fields,$selection,"id='api_source_$key' class='form-control'") ?>
+					<?=form_dropdown('api_source_fields[]',$api_source_fields,$source_fields[$counter],"id='api_source_$key' class='form-control'") ?>
 					
 					</div>
 					</div>

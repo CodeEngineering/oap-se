@@ -8,6 +8,7 @@ var $name="Office AutoPilot";
 var $abr="OAP";
 var $users=array('Contact Information','Contact Attributes','Contact System Attributes','Lead Information','Sequences and Tags','Affiliate Data','Transaction Info','Credit Card');
 private $users_fields=array();
+private $active_fieldlist=array();
 var $filters=array();
 function __construct()
 {
@@ -15,6 +16,7 @@ function __construct()
 	$this->ci =& get_instance();	
 	include('oap.fields.php');
 	$this->users_fields=$user_fieldlist;
+	$this->active_fieldlist=$active_fields;
 	$this->filters=$filter_operation;
 	//$this->key['users']=$this->key__();
 	//$this->key['users']=$this->key['users']['Contact Information'];
@@ -26,8 +28,8 @@ var  $api=array (
 				'Forms'		=>"http://api.moon-ray.com/fdata.php" 
 				);
  var $form_fields=array(
-				"Appid"    =>'2_8431_bRCOCALyZ',
-				"Key"      =>'ZIzXnKdwkBgsRXb',
+				"Appid"    =>'2_10595_HBEw7rcFs',
+				"Key"      =>'Ln33tNCGHaj32iw',
 				"reqType"  =>'',
 				"data"     =>'',//xml format
 				'f_add'    =>0,
@@ -58,7 +60,11 @@ function Fields($data='user')
 		{
 			case 'user':
 			{
-				$res= $this->users_fields['Contact Information'];
+				//$res= $active_fields;//array_merge($this->users_fields['Contact Information'],$this->users_fields['Social Engine Membership Options']);
+				foreach ($this->active_fieldlist as $key=>$list)
+				{
+					$res[$list]=$this->users_fields[$list];
+				}
 				break;
 			}
 			}
@@ -139,8 +145,32 @@ function Delete($point,$data=null)
 */
 var $request=array('key','search','fetch','add','update','fetch_tag','fetch_sequence','sale','refund','delete');
 
-			
-			
+	function create_section($point)
+	{
+$data ='
+<data>
+<Group_Tag name="SE-section">
+<field name="username" type="text"/>
+<field name="password" type="text"/>
+<field name="access Level" type="text"/>
+</Group_Tag>
+</data>
+';
+	$this->form_fields['data']=$data;
+	$this->form_fields['reqType']='add_section';
+	print_r($this->form_fields);
+	$res= $this->execute($point,$this->form_fields);
+	return $res;
+	}			
+public function get_key($point,$data=null)
+{
+	
+	$this->form_fields['data']='';
+	$this->form_fields['reqType']='key';
+	print_r($this->form_fields);
+	$res= $this->execute($point,$this->form_fields);
+	return $res;
+}	
 
 	private function key__($data)
 	{
@@ -271,7 +301,7 @@ var $request=array('key','search','fetch','add','update','fetch_tag','fetch_sequ
 */
 	}
 	
-	
+
 	function execute($point,$form)
 	{
 
@@ -280,10 +310,12 @@ var $request=array('key','search','fetch','add','update','fetch_tag','fetch_sequ
 			//print_r($form);
 			//$this->ci->curl->proxy('http://cache2.lrdc.lexmark.com'); 
 			//$this->ci->curl->proxy_login('mtel', 'Lexmark#321');
-			$res= '<?xml version="1.0" encoding="UTF-8"?>'.$this->ci->curl->execute();
+			/*$res= '<?xml version="1.0" encoding="UTF-8"?>'.$this->ci->curl->execute*/
+			$res= $this->ci->curl->execute();
 			//echo 'result:'.$res;
 			$res=$this->ci->format->factory($res,'xml')->to_array();
-			//print_r($res);
+			echo '<pre>';
+			print_r($res);
 			return $res;
 			
 

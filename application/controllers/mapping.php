@@ -2,6 +2,7 @@
 
 class mapping extends CI_Controller {
 var  $connectors=array();
+private $apis=array();
 	function __construct()
 	{
 		parent::__construct();
@@ -17,6 +18,9 @@ var  $connectors=array();
 
 	public function index()
 	{
+		//$this->connectors[0]->create_section($this->connectors[0]->api['users']); 
+		$this->connectors[0]->get_key($this->connectors[0]->api['users']); 
+		exit;
 		redirect('/mapping/step01/');
 		$this->load->view('header');
 		$this->load->view('content1');
@@ -209,14 +213,20 @@ select source fields
 		
 		$connector_from=$this->connectors[$data['connection']->api_source];
 		$from_fields   =$connector_from->Fields('user');
-		
-		foreach ($from_fields as $key=>$field)
+		foreach ($from_fields as $key0=>$section)
 		{
-			if($field['show']==true)
+			$tmp=array();
+			foreach ($section as $key=>$field)
 			{
-				$from_drop[$key]=$field['field'];
+				if($field['show']==true)
+				{
+					//$from_drop[$key0.'_'.$key]=$field['field'];
+					$tmp[$key0.'__'.$key]=$field['field'];
+				}
 			}
-		}		
+		$from_drop[$key0]=$tmp;			
+				
+		}
 		$data['api_source_fields']=$from_drop;
 		
 		
@@ -275,14 +285,31 @@ define source filter
 		$connector_from=$this->connectors[$data['connection']->api_source];
 		$from_fields   =$connector_from->Fields('user');
 		
-		foreach ($from_fields as $key=>$field)
+/* 		foreach ($from_fields as $key=>$field)
 		{
 			if($field['show']==true)
 			{
 				$from_drop[$key]=$field['field'];
 				$field_type[$key]=$field['type'];
 			}
-		}		
+		}	 */
+		
+	foreach ($from_fields as $key0=>$section)
+		{
+			$tmp=array();
+			foreach ($section as $key=>$field)
+			{
+				if($field['show']==true)
+				{
+					//$from_drop[$key0.'_'.$key]=$field['field'];
+					$tmp[$key0.'__'.$key]=$field['field'];
+					$field_type[$key0.'__'.$key]=$field['type'];
+				}
+			}
+		$from_drop[$key0]=$tmp;			
+				
+		}
+		//$from_drop=$from_fields;
 		$data['api_source_fields']=$from_drop;
 		$data['api_source_filter']=$connector_from->filters;
 		$data['api_source_type']=$field_type;
@@ -415,7 +442,63 @@ create summary
 
 	function step07($id=null)
 	{
-	
+		if (!$this->tank_auth->is_logged_in()) {
+			redirect('/auth/login/');
+		}
+		
+		$this->load->model('sync_log');
+		$this->load->model('scheduler');
+		$this->load->model('connector');
+		$this->load->model('api');
+		$this->scheduler->get_todays_schedule();
+		$this->scheduler->get_todays_schedule();
+		$this->apis=$this->api->getall();;
+		
+		$data['user_id']	                = $this->tank_auth->get_user_id();
+		$data['username']	                = $this->tank_auth->get_username();
+		$data['connection']                 =new stdClass();
+		$data['scheduler']                  =new stdClass();
+		
+	/* 	//$id=is_null($id)?$this->saveform($id):$id;
+		if (!is_null($id))
+		{
+			$list=$this->connector->getAll(1, array('user'=>'desc'), array('id'=>$id)); 
+			$data['connection']=$list[0];			
+			if($data['connection']->schedule>0)
+			{
+				$schedule=$this->scheduler->getAll(1,null,array('id'=>$data['connection']->schedule));
+				$data['scheduler']=$schedule[0];
+			}
+			
+		}else
+		{
+		 redirect('/step01/', 'refresh');
+		}	 */	
+		
+		//$data=null;
+		$data['jobs']=$this->connector->get_scheduled_job_today($data['user_id']);
+		foreach ($data['jobs'] as $key=>$job)
+		{
+			$data['jobs'][$key]->api_source=$this->apis[$data['jobs'][$key]->api_source];
+			$data['jobs'][$key]->api_target=$this->apis[$data['jobs'][$key]->api_target];
+			$log=$this->sync_log->get_lastlog($job->id);
+			//print_r($job);
+			if (count($log)>0){
+				$data['jobs'][$key]->lastlog=$log[0]->id;
+				$data['jobs'][$key]->logdate=$log[0]->excuted;
+			}
+			else
+			{
+				$data['jobs'][$key]->logdate='No log found';
+			}
+			
+		}
+		//$this->load->view('header');
+		//$this->load->view('admin',$data);
+		//$this->load->view('footer');	
+		$this->load->view('header',array('cal'=>true));
+		$this->load->view('step07',$data);
+		$this->load->view('footer');		
 	}
 	function saveform($id=null)
 	{
@@ -487,8 +570,8 @@ create summary
 				$enabled=$this->input->post('enabled');
 				$weekdays=$this->input->post('weekdays');
 				$days=$this->input->post($weekdays);
-				print_r($start__);
-				print_r($end__);
+				//print_r($start__);
+				//print_r($end__);
 				$schedule->{'mon-enabled'}=isset($enabled[1])?1:0;
 				$schedule->{'tue-enabled'}=isset($enabled[2])?1:0;
 				$schedule->{'wed-enabled'}=isset($enabled[3])?1:0;

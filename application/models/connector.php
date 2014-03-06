@@ -29,13 +29,17 @@ class connector extends Acicrud {
 		$res= $this->db->query($sql);
 		return $res->result();
 	}	
-	function get_scheduled_job_today()
+	function get_scheduled_job_today($user=null)
 	{
 	
 		$now=time();
 		$now1=mktime(0,0,0,date('m',$now),date('d',$now),date('Y',$now));
 		$now2=mktime(23,59,59,date('m',$now),date('d',$now),date('Y',$now));
-		$sql="Select * from connector_map where nextrun>=$now1 and nextrun<=$now2";
+		$sql="Select * from connector_map where nextrun>=$now1 && nextrun<=$now2";
+		if (!is_null($user))
+		{
+			$sql .=" && user=$user";
+		}
 		//echo $sql; 
 		$res= $this->db->query($sql);
 		return $res->result();

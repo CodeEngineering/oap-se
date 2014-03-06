@@ -71,12 +71,15 @@
 			<?php
 				$filters=json_decode($connection->source_filter,true);
 				$filters=is_array($filters)?$filters:array('field'=>array(),'operation'=>array(),'value'=>array());
-				
+				//print_r($api_source_fields);
 				foreach ($filters['field'] as $key=>$filter)
 				{
+					echo $filters['field'][$key];
+					$fields=explode('__',$filters['field'][$key]);
+					//print_r($fields);
 					?>
 					<tr>
-						<td><?=$api_source_fields[$filters['field'][$key]]?></td>
+						<td><?=$api_source_fields["{$fields[0]}"][$filters['field'][$key]]?></td>
 						<td><?=$api_source_filter[$filters['operation'][$key]]?></td>
 						<td><?=$filters['value'][$key]?></td>
 						<td>
