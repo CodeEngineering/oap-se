@@ -107,9 +107,9 @@ private $apis=array();
 		$data['connectors_list']=$connectors_list;
 
 		header('Content-Type: text/html; charset=utf-8');
-		$this->load->view('header',array('cal'=>false));
-		$this->load->view('step01',$data);
-		$this->load->view('footer');		
+		$this->load->view('connection_setup/common/header',$data);
+		$this->load->view('connection_setup/step01',$data);
+		$this->load->view('connection_setup/common/footer');		
 	}
 
 	
@@ -162,9 +162,12 @@ Description:
 		
 		
 		header('Content-Type: text/html; charset=utf-8');
-		$this->load->view('header',array('cal'=>false));
+/* 		$this->load->view('header',array('cal'=>false));
 		$this->load->view('step02',$data);
-		$this->load->view('footer');		
+		$this->load->view('footer'); */
+		$this->load->view('connection_setup/common/header',$data);
+		$this->load->view('connection_setup/step02',$data);
+		$this->load->view('connection_setup/common/footer');		
 	}
 
 /**
@@ -232,9 +235,12 @@ select source fields
 		
 		
 		header('Content-Type: text/html; charset=utf-8');
-		$this->load->view('header',array('cal'=>false));
+/* 		$this->load->view('header',array('cal'=>false));
 		$this->load->view('step03',$data);
-		$this->load->view('footer');		
+		$this->load->view('footer'); */	
+		$this->load->view('connection_setup/common/header',$data);
+		$this->load->view('connection_setup/step03',$data);
+		$this->load->view('connection_setup/common/footer');			
 	}
 
 /**
@@ -316,9 +322,13 @@ define source filter
 		
 		
 		header('Content-Type: text/html; charset=utf-8');
-		$this->load->view('header',array('cal'=>false));
+/* 		$this->load->view('header',array('cal'=>false));
 		$this->load->view('step04',$data);
-		$this->load->view('footer');		
+		$this->load->view('footer');	 */
+
+		$this->load->view('connection_setup/common/header',$data);
+		$this->load->view('connection_setup/step04',$data);
+		$this->load->view('connection_setup/common/footer');			
 	}
 	
 /**
@@ -391,9 +401,13 @@ create schedule to sync data
 		
 		
 		header('Content-Type: text/html; charset=utf-8');
-		$this->load->view('header',array('cal'=>true));
+	/* 	$this->load->view('header',array('cal'=>true));
 		$this->load->view('step05',$data);
-		$this->load->view('footer');		
+		$this->load->view('footer'); */	
+
+		$this->load->view('connection_setup/common/header',$data);
+		$this->load->view('connection_setup/step05',$data);
+		$this->load->view('connection_setup/common/footer');			
 	}	
 
 /**
@@ -435,9 +449,12 @@ create summary
 		$data['connection']->api_target=$this->connectors[$data['connection']->api_target]->name;
 		
 		header('Content-Type: text/html; charset=utf-8');
-		$this->load->view('header',array('cal'=>true));
+/* 		$this->load->view('header',array('cal'=>true));
 		$this->load->view('step06',$data);
-		$this->load->view('footer');		
+		$this->load->view('footer'); */	
+		$this->load->view('connection_setup/common/header',$data);
+		$this->load->view('connection_setup/step06',$data);
+		$this->load->view('connection_setup/common/footer');			
 	}	
 
 	function step07($id=null)
@@ -496,9 +513,12 @@ create summary
 		//$this->load->view('header');
 		//$this->load->view('admin',$data);
 		//$this->load->view('footer');	
-		$this->load->view('header',array('cal'=>true));
+/* 		$this->load->view('header',array('cal'=>true));
 		$this->load->view('step07',$data);
-		$this->load->view('footer');		
+		$this->load->view('footer') */;	
+		$this->load->view('connection_setup/common/header',$data);
+		$this->load->view('connection_setup/step07',$data);
+		$this->load->view('connection_setup/common/footer');		
 	}
 	function saveform($id=null)
 	{

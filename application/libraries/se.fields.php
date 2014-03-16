@@ -4,6 +4,7 @@ $user_fieldlist = Array
             0 =>array('field'=>'user_id',            'read'=>true,'write'=>false,'show'=>false),
             1 =>array('field'=>'email',              'read'=>true,'write'=>true,'show'=>true),
             2 =>array('field'=>'username',           'read'=>true,'write'=>true,'show'=>true),
+			23=>array('field'=>'password',         'read'=>false,'write'=>true,'show'=>true),
             3 =>array('field'=>'displayname',        'read'=>true,'write'=>true,'show'=>true),
             4 =>array('field'=>'photo_id',           'read'=>true,'write'=>false,'show'=>false),
             5 =>array('field'=>'status',             'read'=>true,'write'=>false,'show'=>false),
@@ -23,7 +24,8 @@ $user_fieldlist = Array
             19=>array('field'=>'modified_date',      'read'=>true,'write'=>false,'show'=>false),
             20=>array('field'=>'lastlogin_date',     'read'=>true,'write'=>false,'show'=>false),
             21=>array('field'=>'member_count',       'read'=>true,'write'=>false,'show'=>false),
-            22=>array('field'=>'view_count',         'read'=>true,'write'=>false,'show'=>false)
+            22=>array('field'=>'view_count',         'read'=>true,'write'=>false,'show'=>false),
+
         )
 
 ?>

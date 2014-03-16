@@ -44,7 +44,7 @@ function runnow(id)
 {
 	$('.state').removeClass('glyphicon-time');
 	$('.state').addClass('glyphicon-transfer');
-	$.post("<?=base_url()."Sync/runnow/"?>",{connectionid:id},function(data){
+	$.post("<?=base_url()."sync/runnow/"?>",{connectionid:id},function(data){
 	$('.logdate').text(data.date);
 	$('.logid').text(data.id);
 	$('.state').removeClass('glyphicon-transfer');
