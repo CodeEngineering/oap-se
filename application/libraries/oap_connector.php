@@ -125,6 +125,8 @@ function Search($point,$data=null,$fieldout=null)
 			
 		}
 		$result[]=$tmp;
+		$data->clear(); 
+		unset($data);
 	}
 	//print_r($result);exit;
 	return $result;	
