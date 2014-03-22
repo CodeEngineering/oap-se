@@ -1,4 +1,5 @@
 <?php
+ini_set('memory_limit', '-1');
 //date_default_timezone_set('utc');
 ini_set('date.timezone', 'Asia/Manila');
 //ini_set('date.timezone', 'utc');
