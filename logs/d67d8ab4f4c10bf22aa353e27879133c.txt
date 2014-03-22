@@ -1,0 +1,46 @@
+Connection Name:new connection
+Date:2014Mar22 13:55:37
+1 ) :isEmpty
+:isEmpty
+1 ) :isEmpty
+:isEmpty
+1 ) :isEmpty
+:isEmpty
+1 ) :isEmpty
+:isEmpty
+1 ) Florent:ok
+2 ) :isEmpty
+:isEmpty
+2 ) Florian:recordFound
+2 ) Kate:stringLengthTooShort
+2 ) Jaime:stringLengthTooShort
+2 ) Florina:recordFound
+2 ) :isEmpty
+:isEmpty
+2 ) :isEmpty
+:isEmpty
+2 ) :isEmpty
+:isEmpty
+2 ) :isEmpty
+:isEmpty
+2 ) Ulie:stringLengthTooShort
+2 ) :isEmpty
+:isEmpty
+2 ) :isEmpty
+:isEmpty
+2 ) :isEmpty
+:isEmpty
+2 ) :isEmpty
+:isEmpty
+2 ) :isEmpty
+:isEmpty
+2 ) :isEmpty
+:isEmpty
+2 ) Nagy:stringLengthTooShort
+2 ) :isEmpty
+:isEmpty
+2 ) :isEmpty
+:isEmpty
+2 ) Stephanie:ok
+3 ) :isEmpty
+:isEmpty

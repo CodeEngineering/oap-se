@@ -95,23 +95,38 @@ function Read($point,$data=null)
 function Search($point,$data=null,$fieldout=null)
 {
 	$data=$this->search_xml($data);
-	//echo $data;exit;
+	//echo $data;;
 	$this->form_fields['data']=$data;
 	$this->form_fields['reqType']='search';
 	$res= $this->execute($point,$this->form_fields);
+//echo $res->outertext;
 	$result=array();
-	foreach ($res['contact'] as $key=>$data)
+	
+	foreach ($res->find('contact') as $key=>$data)
 	{
+		
 		$tmp=array();
 		foreach($fieldout as $key=>$field)
 		{
-			if(!is_array($data['Group_Tag'][0]['field'][$field]))
-			{$tmp[$key]=$data['Group_Tag'][0]['field'][$field];}
-			else
-			{$tmp[$key]='';}
+			$field_name=$field;
+			//echo $field;echo '<br/>';
+			if(strpos($field,'__'))
+			{
+				$field=explode("__",$field);
+				
+				$field_name=$this->users_fields[$field[0]][$field[1]]['field'];
+			}
+			$tmp[$field_name]='';
+			foreach($data->find("field[name='{$field_name}']") as $value)
+			{
+				$tmp[$key]=$value->plaintext;
+			}
+
+			
 		}
 		$result[]=$tmp;
 	}
+	//print_r($result);exit;
 	return $result;	
 }
 function Update($point,$data=null)
@@ -210,10 +225,18 @@ public function get_key($point,$data=null)
 	{
 		
 		$search='';
+		//print_r($fields);
 		foreach ($fields->field as $key=>$field)
 		{
+			if(strpos($field,'__'))
+			{
+				$field=explode("__",$field);
+				$grp=$field[0];
+				$field=$field[1];
+				
+			}
 			$entry   ="<equation>";
-			$entry  .="<field>".$this->users_fields['Contact Information'][$field]['field']."</field>";
+			$entry  .="<field>".$this->users_fields["$grp"][$field]['field']."</field>";
 			$entry  .="<op>".$fields->operation[$key]."</op>";
 			$entry  .="<value>".$fields->value[$key]."</value>";
 			$entry  .="</equation>";
@@ -312,11 +335,18 @@ public function get_key($point,$data=null)
 			//$this->ci->curl->proxy_login('mtel', 'Lexmark#321');
 			/*$res= '<?xml version="1.0" encoding="UTF-8"?>'.$this->ci->curl->execute*/
 			$res= $this->ci->curl->execute();
-			//echo 'result:'.$res;
-			$res=$this->ci->format->factory($res,'xml')->to_array();
-			echo '<pre>';
-			print_r($res);
-			return $res;
+			
+			//echo 'result:'.$res;exit;
+			//$res=$this->ci->format->factory($res,'xml')->to_array();
+			//echo '<pre>';
+			//print_r($res);
+			// Create a DOM object
+			$html = new simple_html_dom();
+
+			// Load HTML from a string
+			$html->load($res);
+			
+			return $html;
 			
 
 

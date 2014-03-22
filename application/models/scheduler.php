@@ -46,15 +46,20 @@ private $days=array('sun','mon','tue','wed','thu','fri','sat');
 		$day_=date('d');
 		$year=date('Y');	
 		$earliest=mktime(date('H',$start),date('i',$start), 0, $month  , $day_ , $year);//$start;
-		$latest=mktime(date('H',$end),date('i',$end), 0, $month  , $day_ , $year);//$start;;
+		$latest=mktime(date('H',$end),date('i',$end), 0, $month  , $day_ , $year);//$end;;
 		$now=time();//strtotime(date('H:i'));
+		//echo "now:$now <br/>";
+		//echo "now:".date('dMY H:i')." <br/>";
+		//echo "now:".date('dMY H:i',$now)." <br/>";
 		if ($now>$latest)
 		{
 			//next enabled day
+			//echo "next:00:00:; <br/>";
 			return mktime(0,0, 0, $month  , $day_ , $year);
 		}
 		elseif($now<$earliest)
 		{
+			//echo "next: {mktime(date('H',$earliest),date('i',$earliest), 0, $month  , $day_ , $year)}<br/>";
 			return mktime(date('H',$earliest),date('i',$earliest), 0, $month  , $day_ , $year);
 		}
 		else
@@ -63,13 +68,16 @@ private $days=array('sun','mon','tue','wed','thu','fri','sat');
 			$nextrun=$earliest;
 			$hr_interval=floor($interval);
 			$min_interval=($interval*60) % 60;
-			
+			//echo "now:".date('dMY H:i',$now)."<br/>";
+			//echo 'next run :'.date('dMY H:i',$nextrun).'<br/>';
 			while ($nextrun<$now)
 			{
 				$nextrun=mktime(date('H',$nextrun)+($hr_interval),date('i',$nextrun)+($min_interval), 0, $month  , $day_ , $year);
+//echo 'next run :'.date('dMY H:i',$nextrun).'<br/>';
 			}
 			return $nextrun;
 		}
+		
 	}
 
      /**
@@ -85,20 +93,23 @@ private $days=array('sun','mon','tue','wed','thu','fri','sat');
 		$month=date('m');
 		$day_=date('d');
 		$year=date('Y');
+		//echo '<pre>';
+		//print_r($res->result());
 		foreach ($res->result() as $sched)
 		{
 			//print_r($sched);
 			$hour=date('H',$sched->{$days[$day].'-start'});
 			$min=date('i',$sched->{$days[$day].'-start'});
-			$nextrun=mktime($hour, $min, 0, $month  , $day_, $year);
+			//$nextrun=mktime($hour, $min, 0, $month  , $day_, $year);
 			//echo date('Y-m-d H:i:s',$nextrun); 
 			
 			$nextrun=$this->next_run2day($sched->{$days[$day].'-start'},$sched->{$days[$day].'-end'},$sched->sync_interval);
-			
+			//echo $nextrun;
 			$sql1="update `connector_map` set nextrun=$nextrun where id={$sched->connectionID}";
-			if($sched->nextrun<$nextrun)
+			//echo 'sched:'.date('dMY H:i',$sched->nextrun);
+			if($sched->nextrun<=$nextrun)
 			{
-			//echo $sql1;
+//echo $sql1;
 			$this->db->query($sql1);
 			}
 		}

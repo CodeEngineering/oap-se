@@ -1,0 +1,1256 @@
+Connection Name:new connection
+Date:2014Mar22 16:19:10
+1 ) Array
+(
+    [K] => 
+    [email] => chaos@florenceruffryders.net
+    [username] => 
+    [password] => socialengine
+    [displayname] => 
+    [level_id] => 29020
+)
+
+Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => isEmpty
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+
+2 ) Array
+(
+    [K] => 
+    [email] => flora.photography@gmail.com
+    [username] => 
+    [password] => socialengine
+    [displayname] => 
+    [level_id] => 77707
+)
+
+Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => isEmpty
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+
+3 ) Array
+(
+    [K] => 
+    [email] => floradanicaphotography@comcast.net
+    [username] => 
+    [password] => socialengine
+    [displayname] => 
+    [level_id] => 60110
+)
+
+Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => isEmpty
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+
+4 ) Array
+(
+    [K] => 
+    [email] => florence.kriner@yahoo.com
+    [username] => 
+    [password] => socialengine
+    [displayname] => 
+    [level_id] => 65721
+)
+
+Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => isEmpty
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+
+5 ) Array
+(
+    [K] => 
+    [email] => florentvin@gmail.com
+    [username] => Florent
+    [password] => socialengine
+    [displayname] => Vin
+    [level_id] => 
+)
+
+Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                    [0] => recordFound
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => recordFound
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+
+6 ) Array
+(
+    [K] => 
+    [email] => florian.eisermann@googlemail.com
+    [username] => 
+    [password] => socialengine
+    [displayname] => 
+    [level_id] => 34123
+)
+
+Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => isEmpty
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+
+7 ) Array
+(
+    [K] => 
+    [email] => florian@eisermann.cc
+    [username] => Florian
+    [password] => socialengine
+    [displayname] => Eisermann
+    [level_id] => 34121
+)
+
+Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => recordFound
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+
+8 ) Array
+(
+    [K] => 
+    [email] => florianphotography@live.com
+    [username] => Kate
+    [password] => socialengine
+    [displayname] => Florian
+    [level_id] => 68501
+)
+
+Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                    [0] => recordFound
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => recordFound
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+
+9 ) Array
+(
+    [K] => 
+    [email] => floridagirl0304@gmail.com
+    [username] => Jaime
+    [password] => socialengine
+    [displayname] => 
+    [level_id] => 32825
+)
+
+Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                    [0] => recordFound
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => recordFound
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+
+10 ) Array
+(
+    [K] => 
+    [email] => florina@florinar.com
+    [username] => Florina
+    [password] => socialengine
+    [displayname] => Romoser
+    [level_id] => 31707
+)
+
+Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => recordFound
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+
+11 ) Array
+(
+    [K] => 
+    [email] => florinar@militarycaketoppers.com
+    [username] => 
+    [password] => socialengine
+    [displayname] => 
+    [level_id] => 
+)
+
+Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => isEmpty
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+
+12 ) Array
+(
+    [K] => 
+    [email] => florinar@rocketmail.com
+    [username] => 
+    [password] => socialengine
+    [displayname] => 
+    [level_id] => 61523
+)
+
+Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => isEmpty
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+
+13 ) Array
+(
+    [K] => 
+    [email] => florinkiritescu@gmail.com
+    [username] => 
+    [password] => socialengine
+    [displayname] => 
+    [level_id] => 
+)
+
+Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => isEmpty
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+
+14 ) Array
+(
+    [K] => 
+    [email] => hanzel.florentin@gmail.com
+    [username] => 
+    [password] => socialengine
+    [displayname] => 
+    [level_id] => 
+)
+
+Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => isEmpty
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+
+15 ) Array
+(
+    [K] => 
+    [email] => info@floraphotographica.co.uk
+    [username] => Ulie
+    [password] => socialengine
+    [displayname] => Davenport
+    [level_id] => OX7 6XH
+)
+
+Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                    [0] => recordFound
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => recordFound
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+
+16 ) Array
+(
+    [K] => 
+    [email] => info@florencecatania.com
+    [username] => 
+    [password] => socialengine
+    [displayname] => 
+    [level_id] => 
+)
+
+Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => isEmpty
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+
+17 ) Array
+(
+    [K] => 
+    [email] => info@floridaskiesstudio.com
+    [username] => 
+    [password] => socialengine
+    [displayname] => 
+    [level_id] => 
+)
+
+Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => isEmpty
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+
+18 ) Array
+(
+    [K] => 
+    [email] => k-l-flores@live.com
+    [username] => 
+    [password] => socialengine
+    [displayname] => 
+    [level_id] => 76180
+)
+
+Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => isEmpty
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+
+19 ) Array
+(
+    [K] => 
+    [email] => kimfloresportraits@gmail.com
+    [username] => 
+    [password] => socialengine
+    [displayname] => 
+    [level_id] => 21227
+)
+
+Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => isEmpty
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+
+20 ) Array
+(
+    [K] => 
+    [email] => lena.flores@hotmail.com
+    [username] => 
+    [password] => socialengine
+    [displayname] => 
+    [level_id] => 
+)
+
+Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => isEmpty
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+
+21 ) Array
+(
+    [K] => 
+    [email] => marisa@houseofflores.com
+    [username] => 
+    [password] => socialengine
+    [displayname] => 
+    [level_id] => 11233
+)
+
+Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => isEmpty
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+
+22 ) Array
+(
+    [K] => 
+    [email] => nagyflorian@fotok.ro
+    [username] => Nagy
+    [password] => socialengine
+    [displayname] => Florian
+    [level_id] => 
+)
+
+Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                    [0] => recordFound
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => recordFound
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+
+23 ) Array
+(
+    [K] => 
+    [email] => paulflor@yahoo.com
+    [username] => 
+    [password] => socialengine
+    [displayname] => 
+    [level_id] => 93637
+)
+
+Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => isEmpty
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+
+24 ) Array
+(
+    [K] => 
+    [email] => rt2@imageflorida.net
+    [username] => 
+    [password] => socialengine
+    [displayname] => 
+    [level_id] => 34209
+)
+
+Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => isEmpty
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+
+25 ) Array
+(
+    [K] => 
+    [email] => stephanie_florence2001@yahoo.com
+    [username] => Stephanie
+    [password] => socialengine
+    [displayname] => Florence
+    [level_id] => 99019
+)
+
+Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                    [0] => recordFound
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => recordFound
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+
+26 ) Array
+(
+    [K] => 
+    [email] => whimsicalfloral@gmail.com
+    [username] => 
+    [password] => socialengine
+    [displayname] => 
+    [level_id] => 
+)
+
+Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => isEmpty
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+

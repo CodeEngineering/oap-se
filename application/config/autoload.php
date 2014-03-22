@@ -52,7 +52,7 @@ $autoload['packages'] = array();
 |	$autoload['libraries'] = array('database', 'session', 'xmlrpc');
 */
 
-$autoload['libraries'] = array('curl','format','oap_connector','se_connector','acicrud','database');
+$autoload['libraries'] = array('curl','format','oap_connector','se_connector','acicrud','database','simple_html_dom_node');
 
 
 /*

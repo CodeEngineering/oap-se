@@ -1,0 +1,1108 @@
+Connection Name:My second  connection
+Date:2014Mar22 14:41:27
+1 ) Array
+(
+    [K] => 
+    [email] => photosbyhartman@gmail.com
+    [username] => Josh
+    [password] => socialengine
+    [displayname] => Josh
+    [level_id] => 
+)
+
+Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                    [0] => recordFound
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => recordFound
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+
+2 ) Array
+(
+    [K] => 
+    [email] => josh@thephotodad.com
+    [username] => Josh
+    [password] => socialengine
+    [displayname] => Josh
+    [level_id] => 
+)
+
+Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => recordFound
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+
+3 ) Array
+(
+    [K] => 
+    [email] => josh@barronphotography.com
+    [username] => Josh
+    [password] => socialengine
+    [displayname] => Josh
+    [level_id] => 
+)
+
+Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => recordFound
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+
+4 ) Array
+(
+    [K] => 
+    [email] => joshua.ohms@gmail.com
+    [username] => Josh
+    [password] => socialengine
+    [displayname] => Josh
+    [level_id] => 
+)
+
+Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => recordFound
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+
+5 ) Array
+(
+    [K] => 
+    [email] => jhphoto12@hotmail.com
+    [username] => Josh
+    [password] => socialengine
+    [displayname] => Josh
+    [level_id] => 
+)
+
+Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => recordFound
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+
+6 ) Array
+(
+    [K] => 
+    [email] => joshjonesphoto@gmail.com
+    [username] => Josh
+    [password] => socialengine
+    [displayname] => Josh
+    [level_id] => 
+)
+
+Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => recordFound
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+
+7 ) Array
+(
+    [K] => 
+    [email] => curran.josh@gmail.com
+    [username] => Josh
+    [password] => socialengine
+    [displayname] => Josh
+    [level_id] => 
+)
+
+Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => recordFound
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+
+8 ) Array
+(
+    [K] => 
+    [email] => jhuskin@gmail.com
+    [username] => Josh
+    [password] => socialengine
+    [displayname] => Josh
+    [level_id] => 
+)
+
+Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => recordFound
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+
+9 ) Array
+(
+    [K] => 
+    [email] => iampenrod@gmail.com
+    [username] => Joshua
+    [password] => socialengine
+    [displayname] => Joshua
+    [level_id] => 
+)
+
+Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                    [0] => recordFound
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => recordFound
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+
+10 ) Array
+(
+    [K] => 
+    [email] => anjwalters@sbcglobal.net
+    [username] => Joshua
+    [password] => socialengine
+    [displayname] => Joshua
+    [level_id] => 
+)
+
+Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => recordFound
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+
+11 ) Array
+(
+    [K] => 
+    [email] => mark.wfcc@gmail.com
+    [username] => Joshua
+    [password] => socialengine
+    [displayname] => Joshua
+    [level_id] => 
+)
+
+Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => recordFound
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+
+12 ) Array
+(
+    [K] => 
+    [email] => pharrisphotography@gmail.com
+    [username] => Joshua
+    [password] => socialengine
+    [displayname] => Joshua
+    [level_id] => 
+)
+
+Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => recordFound
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+
+13 ) Array
+(
+    [K] => 
+    [email] => amazinggracephotography@live.com
+    [username] => Joshua
+    [password] => socialengine
+    [displayname] => Joshua
+    [level_id] => 
+)
+
+Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => recordFound
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+
+14 ) Array
+(
+    [K] => 
+    [email] => jaayres20@gmail.com
+    [username] => Joshua
+    [password] => socialengine
+    [displayname] => Joshua
+    [level_id] => 
+)
+
+Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => recordFound
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+
+15 ) Array
+(
+    [K] => 
+    [email] => info@joshuaalbanese.com
+    [username] => Joshua
+    [password] => socialengine
+    [displayname] => Joshua
+    [level_id] => 
+)
+
+Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => recordFound
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+
+16 ) Array
+(
+    [K] => 
+    [email] => info@joshuabehanweddings.com
+    [username] => joshua
+    [password] => socialengine
+    [displayname] => joshua
+    [level_id] => 
+)
+
+Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => recordFound
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+
+17 ) Array
+(
+    [K] => 
+    [email] => joshbehan@gmail.com
+    [username] => Joshua
+    [password] => socialengine
+    [displayname] => Joshua
+    [level_id] => 
+)
+
+Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => recordFound
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+
+18 ) Array
+(
+    [K] => 
+    [email] => josh@joshuagull.com
+    [username] => Joshua
+    [password] => socialengine
+    [displayname] => Joshua
+    [level_id] => 
+)
+
+Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => recordFound
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+
+19 ) Array
+(
+    [K] => 
+    [email] => joshihrie@gmail.com
+    [username] => joshua
+    [password] => socialengine
+    [displayname] => joshua
+    [level_id] => 
+)
+
+Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => recordFound
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+
+20 ) Array
+(
+    [K] => 
+    [email] => joshuael@me.com
+    [username] => Joshua
+    [password] => socialengine
+    [displayname] => Joshua
+    [level_id] => 
+)
+
+Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => recordFound
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+
+21 ) Array
+(
+    [K] => 
+    [email] => joshua_mikhaiel@hotmail.com
+    [username] => Joshua
+    [password] => socialengine
+    [displayname] => Joshua
+    [level_id] => 
+)
+
+Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => recordFound
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+
+22 ) Array
+(
+    [K] => 
+    [email] => joshmikhaielphotography@gmail.com
+    [username] => Joshua
+    [password] => socialengine
+    [displayname] => Joshua
+    [level_id] => 
+)
+
+Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => recordFound
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+
+23 ) Array
+(
+    [K] => 
+    [email] => joshua@joshuayetman.com
+    [username] => Joshua
+    [password] => socialengine
+    [displayname] => Joshua
+    [level_id] => 
+)
+
+Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => recordFound
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+

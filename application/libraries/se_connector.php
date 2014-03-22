@@ -6,7 +6,7 @@ class se_connector{
 	var $abr="SE";
 	var $debug=false;
 	var $users_fields=array();
-	
+	var $log='';
 	function __construct()
 	{
 		$this->ci =& get_instance();	
@@ -14,7 +14,7 @@ class se_connector{
 		$this->users_fields=$user_fieldlist;
 	}
 var  $api=array (
-				'users'	=>"http://se4api.bpsstaging.com/restapi/users/" 
+				'users'	=>"http://clickinback.com/restapi/users/" 
 				);
 
  var $form_fields=array(
@@ -59,7 +59,7 @@ $log='';
 		$log .="$counter ) ";
 		$this->form_fields=array();
 		$this->form_fields['K']='';
-		
+		//print_r($dat);exit;
 		foreach($fields as $key2=>$field)
 		{
 			$this->form_fields[$this->users_fields[$field]['field']]=$dat[$key2];
@@ -74,30 +74,32 @@ $log='';
 		} 
 		
 		$this->form_fields['password']='socialengine';
-		//print_r($this->form_fields);
+		
+		if (trim($this->form_fields['password'])=='')
+		{
+			$this->form_fields['password']='socialengine';
+		}
+		//print_r($this->form_fields);exit;
 		$res= $this->execute($point,$this->form_fields,'post');
+		
 		//print_r($res);
 		if (isset($res['error']))
 		{
 			
-			foreach ($res['error'] as $key=>$err)
-			{
-				if (count($err)>0)
-				{
+			$log .=print_r($this->form_fields,1)."\r\n";
+			$log .=print_r($res,1)."\r\n";
 
-				$log .=$this->form_fields[$key] .':'.$err[0]."\r\n";
-				}
-			}
 		}else
 		{
 			$log .=$this->form_fields['username'] .':ok'."\r\n";
 		}
-		if(isset($res['user_id']))
+		//if(isset($res['user_id']))
 		{
 			$counter ++;
 		}
 		
 	}
+//echo $log;
 	return $log;
 
 
@@ -179,8 +181,7 @@ function execute($point,$form=array(),$method='get')
 				}
 		}
 		
-		//$this->ci->curl->proxy('http://cache2.lrdc.lexmark.com'); 
-		//$this->ci->curl->proxy_login('mtel', 'Lexmark#321');
+		
 
 			$res= $this->ci->curl->execute();
 			return $this->ci->format->factory($res,'json')->to_array();

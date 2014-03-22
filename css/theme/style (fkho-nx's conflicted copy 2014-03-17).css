@@ -1,0 +1,147 @@
+
+body{
+
+background-color:#dadada;
+
+height:100%;
+color : #f6f7f8;
+font-family: "neosansregular";
+font-size:12px;
+}
+a{
+	
+	color:#25a8e0;
+}
+input {
+	height:15px;
+	}
+/* input[type="checkbox"] {
+    display:none;
+} */
+input[type="checkbox"] + label span {
+    display:inline-block;
+    width:19px;
+    height:19px;
+    margin:-1px 4px 0 0;
+    vertical-align:middle;
+    background:url(images/checkbox.png) left top no-repeat;
+    cursor:pointer;
+}
+input[type="checkbox"]:checked + label span {
+    background:url(images/checkbox.png) -19px top no-repeat;
+}
+.html{
+
+background-color:#dadada;
+
+min-height:500px;
+height:100%;
+}
+
+.header{
+height:105px;
+background-color:#242424;
+
+}
+.logo{
+
+background-image:url("logo_text.png");
+width:200px;
+height:63px;
+margin-top:20px;
+
+}
+.page_title{
+font-family: "neosansregularlight";
+margin-top:45px;
+margin-left:15px;
+font-size:23px;
+
+}
+.page_title:before
+{
+content: "\2014\A0\A0\A0";/*&mdash;*/
+}
+.user{
+font-family: "neosansregularlight";
+margin-top:50px;
+
+font-size:12px;	
+	}
+.user a{
+	margin-left:5px;
+	margin-right:5px;
+	}
+.content{
+	min-height:600px;
+	
+	height:100%;
+	
+	}
+.step_number{
+	text-align:right;
+	color:#c6c6c6;
+	font-size:23px;
+	font-family: "neosansregularlight";
+	}
+.step_name{
+	color:#242424;
+	font-size:23px;
+	font-family: "neosansregularlight";
+	}
+.operation_step{
+	margin-top:73px;
+	
+	}
+select.datasource option {
+background-repeat:no-repeat;
+background-position:center left;
+padding-left:30px;
+height:75px;
+}
+.blue{
+	background-color:#25a8e0;
+	color:#f6f7f8;
+	
+	}
+form.form_label label{
+		font-family: "neosansregularlight";
+		color:#555555;
+		font-size:15px;
+	}
+
+.content_data
+{
+	margin-top:65px;
+	}
+.footer{
+	color:#999999;
+	font-family: "neosansregularlight";
+	
+	}
+.hint{
+	background-image:url("images/hint.png");
+	width:18px;
+	height:18px;
+	background-repeat:no-repeat;
+	background-position:center; 
+	}
+select {
+    -moz-appearance: none;
+	-webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+	text-indent: 0.01px;
+	text-overflow: '';
+}
+.navigation{
+margin-top:50px;
+}
+.navigation >button{
+margin-right:35px;
+width:100px;
+}
+
+textarea {
+    resize: none;
+}

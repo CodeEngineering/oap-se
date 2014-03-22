@@ -1,0 +1,878 @@
+Connection Name:My second  connection
+Date:2014Mar22 14:30:56
+1 ) Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                    [0] => recordFound
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => recordFound
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+
+2 ) Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => recordFound
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+
+3 ) Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => recordFound
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+
+4 ) Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => recordFound
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+
+5 ) Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => recordFound
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+
+6 ) Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => recordFound
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+
+7 ) Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => recordFound
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+
+8 ) Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => recordFound
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+
+9 ) Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                    [0] => recordFound
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => recordFound
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+
+10 ) Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => recordFound
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+
+11 ) Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => recordFound
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+
+12 ) Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => recordFound
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+
+13 ) Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => recordFound
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+
+14 ) Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => recordFound
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+
+15 ) Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => recordFound
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+
+16 ) Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => recordFound
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+
+17 ) Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => recordFound
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+
+18 ) Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => recordFound
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+
+19 ) Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => recordFound
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+
+20 ) Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => recordFound
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+
+21 ) Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => recordFound
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+
+22 ) Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => recordFound
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+
+23 ) Array
+(
+    [status] => 
+    [error] => Array
+        (
+            [email] => Array
+                (
+                )
+
+            [password] => Array
+                (
+                )
+
+            [username] => Array
+                (
+                    [0] => recordFound
+                )
+
+            [profile_type] => Array
+                (
+                )
+
+            [timezone] => Array
+                (
+                )
+
+            [language] => Array
+                (
+                )
+
+            [submit] => Array
+                (
+                )
+
+        )
+
+)
+
