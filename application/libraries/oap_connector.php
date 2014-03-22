@@ -102,7 +102,7 @@ function Search($point,$data=null,$fieldout=null)
 //echo $res->outertext;
 	$result=array();
 	
-	foreach ($res->find('contact') as $key=>$data)
+	foreach ($res->find('contact') as $key=>$data1)
 	{
 		
 		$tmp=array();
@@ -117,7 +117,7 @@ function Search($point,$data=null,$fieldout=null)
 				$field_name=$this->users_fields[$field[0]][$field[1]]['field'];
 			}
 			$tmp[$field_name]='';
-			foreach($data->find("field[name='{$field_name}']") as $value)
+			foreach($data1->find("field[name='{$field_name}']") as $value)
 			{
 				$tmp[$key]=$value->plaintext;
 			}
@@ -125,8 +125,8 @@ function Search($point,$data=null,$fieldout=null)
 			
 		}
 		$result[]=$tmp;
-		$data->clear(); 
-		unset($data);
+		$data1->clear(); 
+		unset($data1);
 	}
 	//print_r($result);exit;
 	return $result;	
