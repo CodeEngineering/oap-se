@@ -217,7 +217,7 @@ class Acicrud extends CI_Model {
         	}
            
             $this->_load($id);
-           
+           $o=new stdClass;;
             foreach($this->fields as $k => $v)
             {
                 $o->$k = $v;

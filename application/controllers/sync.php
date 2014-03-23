@@ -74,6 +74,7 @@ function runnow()
 	$tmp=$this->apis[$connection->api_target]->obj_name;
 	$api_target=new $tmp();
 	$sync_log=$api_target->Create($this->apis[$connection->api_target]->write_point,$res,json_decode($connection->target_fields));
+	$sync_o =new stdClass;;
 	$sync_o->scheduleID=-1;
 	$sync_o->excuted=time();
 	$sync_o->connectionid=$id;
