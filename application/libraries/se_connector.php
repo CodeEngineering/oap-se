@@ -167,7 +167,8 @@ params: email, password, username
 function execute($point,$form=array(),$method='get')
 	{
 
-		$this->ci->curl->create($point);
+echo 'point:'.$point.'<br/>'.print_r($form,1).'<hr/>';		
+$this->ci->curl->create($point);
 		switch($method)
 		{
 			case 'get':
