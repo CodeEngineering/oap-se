@@ -7,19 +7,25 @@ class se_connector{
 	var $debug=false;
 	var $users_fields=array();
 	var $log='';
+	var  $api=array (
+					'users'	=>"http://clickinback.com/restapi/users/" 
+					);
+
+	 var $form_fields=array(
+				"K"      =>'da54058d360f73e7e404a6f9cf7c5da9532fd805f0ef9',
+			);				
+	
 	function __construct()
 	{
 		$this->ci =& get_instance();	
 		include('se.fields.php');
 		$this->users_fields=$user_fieldlist;
-	}
-var  $api=array (
-				'users'	=>"http://clickinback.com/restapi/users/" 
-				);
-
- var $form_fields=array(
-				"K"      =>'',
-			);				
+		if ($_SERVER['SERVER_ADDR']=='72.52.150.216')//bpsstaging.com
+		{
+			$form_fields->K='da54058d360f73e7e404a6f9cf7c5da9532fd805f0ef9';
+		}
+		
+	}				
 				
 /*************************************************************************************/
 /*
