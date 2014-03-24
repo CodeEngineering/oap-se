@@ -71,8 +71,9 @@ function runnow()
 	
 	$res=$api_source->search($this->apis[$connection->api_source]->search_point,$search_filter,json_decode($connection->source_fields));
 	$total_found=count($res);
-	exit;
+	
 	$tmp=$this->apis[$connection->api_target]->obj_name;
+	exit;
 	$api_target=new $tmp();
 	//echo 'point::'.$this->apis[$connection->api_target]->write_point;exit;
 	
