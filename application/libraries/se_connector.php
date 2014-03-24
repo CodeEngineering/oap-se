@@ -60,6 +60,7 @@ function Create($point,$data=null,$fields)
 {
 $counter=1;
 $log='';
+echo 'create(point):'.$point;
 	foreach($data as $key=>$dat)
 	{
 		$log .="$counter ) ";
