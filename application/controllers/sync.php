@@ -71,6 +71,7 @@ function runnow()
 	
 	$res=$api_source->search($this->apis[$connection->api_source]->search_point,$search_filter,json_decode($connection->source_fields));
 	$total_found=count($res);
+	exit;
 	$tmp=$this->apis[$connection->api_target]->obj_name;
 	$api_target=new $tmp();
 	//echo 'point::'.$this->apis[$connection->api_target]->write_point;exit;
@@ -78,7 +79,8 @@ function runnow()
 	$sync_log=$api_target->Create($this->apis[$connection->api_target]->write_point,$res,json_decode($connection->target_fields));
 	
 	$targetpoint=$api_target->api['users'];
-	echo 'point:::'.$targetpoint;exit;
+	echo 'point:::'.$targetpoint;
+	exit;
 	//$sync_log=$api_target->Create($this->apis[$connection->api_target]->write_point,$res,json_decode($connection->target_fields));
 //	$sync_log=$api_target->Create($targetpoint,$res,json_decode($connection->target_fields));
 	
