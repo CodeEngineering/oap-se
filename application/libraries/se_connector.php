@@ -60,7 +60,7 @@ function Create($point,$data=null,$fields)
 {
 $counter=1;
 $log='';
-echo 'create(point):'.$point;
+//echo 'create(point):'.$point;
 	foreach($data as $key=>$dat)
 	{
 		$log .="$counter ) ";
@@ -168,7 +168,7 @@ params: email, password, username
 function execute($point,$form=array(),$method='get')
 	{
 
-echo 'point:'.$point.'<br/>'.print_r($form,1).'<hr/>';		
+//echo 'point:'.$point.'<br/>'.print_r($form,1).'<hr/>';		
 $this->ci->curl->create($point);
 		switch($method)
 		{
@@ -192,7 +192,7 @@ $this->ci->curl->create($point);
 		
 
 			$res= $this->ci->curl->execute();
-			echo 'result:'.$res.'<hr/>';
+		//	echo 'result:'.$res.'<hr/>';
 			return $this->ci->format->factory($res,'json')->to_array();
 			
 // debug
