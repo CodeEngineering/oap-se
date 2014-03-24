@@ -191,6 +191,7 @@ $this->ci->curl->create($point);
 		
 
 			$res= $this->ci->curl->execute();
+			echo 'result:'.$res.'<hr/>';
 			return $this->ci->format->factory($res,'json')->to_array();
 			
 // debug
