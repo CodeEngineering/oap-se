@@ -80,7 +80,7 @@ function runnow()
 	$targetpoint=$api_target->api['users'];
 	echo 'point:::'.$targetpoint;exit;
 	//$sync_log=$api_target->Create($this->apis[$connection->api_target]->write_point,$res,json_decode($connection->target_fields));
-	$sync_log=$api_target->Create($targetpoint,$res,json_decode($connection->target_fields));
+//	$sync_log=$api_target->Create($targetpoint,$res,json_decode($connection->target_fields));
 	
 	$sync_o =new stdClass;;
 	$sync_o->scheduleID=-1;
