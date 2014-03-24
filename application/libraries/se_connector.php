@@ -22,7 +22,7 @@ class se_connector{
 		$this->users_fields=$user_fieldlist;
 		if ($_SERVER['SERVER_ADDR']=='72.52.150.216')//bpsstaging.com
 		{
-			$form_fields->K='da54058d360f73e7e404a6f9cf7c5da9532fd805f0ef9';
+			$this->form_fields['K']='da54058d360f73e7e404a6f9cf7c5da9532fd805f0ef9';
 		}
 		
 	}				
