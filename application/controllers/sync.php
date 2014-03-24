@@ -77,7 +77,7 @@ function runnow()
 	
 	$sync_log=$api_target->Create($this->apis[$connection->api_target]->write_point,$res,json_decode($connection->target_fields));
 	
-	$targetpoint=$api_target->api->['users'];
+	$targetpoint=$api_target->api['users'];
 	echo 'point::'.$targetpoint;
 	//$sync_log=$api_target->Create($this->apis[$connection->api_target]->write_point,$res,json_decode($connection->target_fields));
 	$sync_log=$api_target->Create($targetpoint,$res,json_decode($connection->target_fields));
