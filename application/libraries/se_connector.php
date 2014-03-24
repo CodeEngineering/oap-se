@@ -64,7 +64,7 @@ $log='';
 	{
 		$log .="$counter ) ";
 		$this->form_fields=array();
-		$this->form_fields['K']='';
+		//$this->form_fields['K']='';
 		//print_r($dat);exit;
 		foreach($fields as $key2=>$field)
 		{
