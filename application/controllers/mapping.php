@@ -13,19 +13,64 @@ private $apis=array();
 		$this->connectors=array();
 		$this->connectors[0]=new oap_connector();
 		$this->connectors[1]= new se_connector();
+		$this->load->model('api');
+		$this->apis=$this->api->getall();;
 		
 	}
-
+function get_user_connection($userid)
+{
+		$this->load->model('sync_log');
+		$this->load->model('scheduler');
+		$this->load->model('connector');
+		$this->load->model('api');
+		$data['jobs']=$this->connector->get_scheduled_job_today($userid);
+		//print_r($data['jobs']);exit;
+		foreach ($data['jobs'] as $key=>$job)
+		{
+			//echo print_r($this->apis,1);
+			$data['jobs']["$key"]->api_source=$this->apis[$data['jobs']["$key"]->api_source];//exit;
+			$data['jobs'][$key]->api_target=$this->apis[$data['jobs'][$key]->api_target];
+			$log=$this->sync_log->get_lastlog($job->id);
+			//print_r($log);
+			if (count($log)>0){
+				$data['jobs'][$key]->lastlog=$log[0]->id;
+				$data['jobs'][$key]->logdate=date('YMd H:i:s',$log[0]->excuted);
+				
+			}
+			else
+			{
+				$data['jobs'][$key]->logdate='No log found';
+				$data['jobs'][$key]->lastlog=-1;
+			}
+			
+		};
+		return $data['jobs'];
+}
 	public function index()
 	{
-		//$this->connectors[0]->create_section($this->connectors[0]->api['users']); 
-		$this->connectors[0]->get_key($this->connectors[0]->api['users']); 
-		exit;
-		redirect('/mapping/step01/');
-		$this->load->view('header');
-		$this->load->view('content1');
-		$this->load->view('footer');
-		//connector list
+		if (!$this->tank_auth->is_logged_in()) {
+			redirect('/auth/login/');
+		}
+		
+		$this->load->model('sync_log');
+		$this->load->model('scheduler');
+		$this->load->model('connector');
+		$this->load->model('api');
+		$this->scheduler->get_todays_schedule();
+		//$this->scheduler->get_todays_schedule();
+		
+		
+		$data['user_id']	                = $this->tank_auth->get_user_id();
+		$data['username']	                = $this->tank_auth->get_username();
+		$data['connection']                 =new stdClass();
+		$data['scheduler']                  =new stdClass();
+
+		$data['jobs']=$this->get_user_connection($data['user_id']);
+		//print_r($data);
+		header('Content-Type: text/html; charset=utf-8');
+		$this->load->view('connection_setup/common/header',$data);
+		$this->load->view('connection_setup/step00',$data);
+		$this->load->view('connection_setup/common/footer');
 		
 
 	}
@@ -105,7 +150,7 @@ private $apis=array();
 			$connectors_list[]=$val->name;
 		}	
 		$data['connectors_list']=$connectors_list;
-
+		$data['jobs']=$this->get_user_connection($data['user_id']);
 		header('Content-Type: text/html; charset=utf-8');
 		$this->load->view('connection_setup/common/header',$data);
 		$this->load->view('connection_setup/step01',$data);
@@ -151,8 +196,12 @@ Description:
 
 		$connector_to  =$this->connectors[$data['connection']->api_target];
 		$to_fields     =$connector_to->Fields('user');
+		//print_r($to_fields);
 		foreach ($to_fields as $key=>$field)
 		{
+			//echo '<pre>';
+			//print_r($field);exit;
+			//echo '<hr/>';
 			if($field['show']==true)
 			{
 				$to_drop[$key]=$field['field'];
@@ -160,7 +209,7 @@ Description:
 		}
 		$data['api_target_fields']=$to_drop;
 		
-		
+$data['jobs']=$this->get_user_connection($data['user_id']);		
 		header('Content-Type: text/html; charset=utf-8');
 /* 		$this->load->view('header',array('cal'=>false));
 		$this->load->view('step02',$data);
@@ -233,7 +282,7 @@ select source fields
 		$data['api_source_fields']=$from_drop;
 		
 		
-		
+$data['jobs']=$this->get_user_connection($data['user_id']);		
 		header('Content-Type: text/html; charset=utf-8');
 /* 		$this->load->view('header',array('cal'=>false));
 		$this->load->view('step03',$data);
@@ -325,7 +374,7 @@ define source filter
 /* 		$this->load->view('header',array('cal'=>false));
 		$this->load->view('step04',$data);
 		$this->load->view('footer');	 */
-
+$data['jobs']=$this->get_user_connection($data['user_id']);
 		$this->load->view('connection_setup/common/header',$data);
 		$this->load->view('connection_setup/step04',$data);
 		$this->load->view('connection_setup/common/footer');			
@@ -398,7 +447,7 @@ create schedule to sync data
 			$data['scheduler']=$schedule[0];
 		}
 		
-		
+$data['jobs']=$this->get_user_connection($data['user_id']);		
 		
 		header('Content-Type: text/html; charset=utf-8');
 	/* 	$this->load->view('header',array('cal'=>true));
@@ -447,7 +496,7 @@ create summary
 		
 		$data['connection']->api_source=$this->connectors[$data['connection']->api_source]->name;
 		$data['connection']->api_target=$this->connectors[$data['connection']->api_target]->name;
-		
+$data['jobs']=$this->get_user_connection($data['user_id']);		
 		header('Content-Type: text/html; charset=utf-8');
 /* 		$this->load->view('header',array('cal'=>true));
 		$this->load->view('step06',$data);
@@ -468,32 +517,15 @@ create summary
 		$this->load->model('connector');
 		$this->load->model('api');
 		$this->scheduler->get_todays_schedule();
-		$this->scheduler->get_todays_schedule();
+		//$this->scheduler->get_todays_schedule();
 		$this->apis=$this->api->getall();;
 		
 		$data['user_id']	                = $this->tank_auth->get_user_id();
 		$data['username']	                = $this->tank_auth->get_username();
 		$data['connection']                 =new stdClass();
 		$data['scheduler']                  =new stdClass();
-		
-	/* 	//$id=is_null($id)?$this->saveform($id):$id;
-		if (!is_null($id))
-		{
-			$list=$this->connector->getAll(1, array('user'=>'desc'), array('id'=>$id)); 
-			$data['connection']=$list[0];			
-			if($data['connection']->schedule>0)
-			{
-				$schedule=$this->scheduler->getAll(1,null,array('id'=>$data['connection']->schedule));
-				$data['scheduler']=$schedule[0];
-			}
-			
-		}else
-		{
-		 redirect('/step01/', 'refresh');
-		}	 */	
-		
-		//$data=null;
-		//echo '<pre>';
+		/* 
+
 		$data['jobs']=$this->connector->get_scheduled_job_today($data['user_id']);
 		//print_r($data['jobs']);exit;
 		foreach ($data['jobs'] as $key=>$job)
@@ -513,13 +545,8 @@ create summary
 				$data['jobs'][$key]->lastlog=-1;
 			}
 			
-		}
-		//$this->load->view('header');
-		//$this->load->view('admin',$data);
-		//$this->load->view('footer');	
-/* 		$this->load->view('header',array('cal'=>true));
-		$this->load->view('step07',$data);
-		$this->load->view('footer') */;	
+		} */
+		$data['jobs']=$this->get_user_connection($data['user_id']);
 		$this->load->view('connection_setup/common/header',$data);
 		$this->load->view('connection_setup/step07',$data);
 		$this->load->view('connection_setup/common/footer');		
@@ -840,6 +867,16 @@ function download($id)
 {
 
 
+}
+function delete($id)
+{
+		if (!$this->tank_auth->is_logged_in()) {
+			redirect('/auth/login/');
+		}
+		$this->load->model('connector');
+
+		$data['jobs']=$this->connector->remove_job($id);
+		redirect('/mapping/', 'refresh');
 }
 }
 

@@ -36,4 +36,43 @@
 				</div>
 			 </div>
 		</div><!-- end header -->
-		
+		<ul class="nav nav-pills">
+			<li><a href="/mapping/">Home</a></li>
+			<li class='dropdown'>
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#" >My Connections <span class="caret"></a>
+				
+				<ul class="dropdown-menu">
+					<li><a href='/mapping/step01'>Create new Connection</a></li>
+					<li role="presentation" class="divider"></li>
+					<?php 
+						foreach ($jobs as $job)
+						{
+							
+							?>
+								<li><a href='/mapping/step01/<?=$job->id?>'><?=$job->connection_name?></a></li>
+							<?php
+						}
+					?>
+					
+					
+				</ul>
+			</li>
+			<?php if(isset($connection->id) && $connection->id>0) {?>
+			<li class='dropdown active' class='active'>
+				<a  class="dropdown-toggle" data-toggle="dropdown" href="#" ><?=$connection->connection_name?> <span class="caret"></a>
+				<ul class='dropdown-menu'>
+					<li><a href='/mapping/step01/<?=$connection->id?>'>Step01</a></li>
+					<li><a href='/mapping/step02/<?=$connection->id?>'>Step02</a></li>
+					<li><a href='/mapping/step03/<?=$connection->id?>'>Step03</a></li>
+					<li><a href='/mapping/step04/<?=$connection->id?>'>Step04</a></li>
+					<li><a href='/mapping/step05/<?=$connection->id?>'>Step05</a></li>
+					<li><a href='/mapping/step06/<?=$connection->id?>'>Step06</a></li>
+					<li><a href='/mapping/step07/<?=$connection->id?>'>Step07</a></li>
+				</ul>
+			
+			</li>
+			<?php } ?>
+			
+						
+			
+		</ul>

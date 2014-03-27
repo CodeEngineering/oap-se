@@ -32,8 +32,8 @@
 							
 						  <div class="form-group">
 							<div class="col-sm-offset-2 col-sm-10 navigation">
-							  <button type="submit" class=" btn btn-primary blue" ><span class=' glyphicon glyphicon-arrow-left'></span>&nbsp;&nbsp;Back</button>
-							  <button type="submit" class="btn btn-primary blue">Next &nbsp;&nbsp;<span class='glyphicon glyphicon-arrow-right'></span> </button>
+							  <button  onclick ="step('step01');return false;"type="submit" class=" btn btn-primary blue" ><span class=' glyphicon glyphicon-arrow-left'></span>&nbsp;&nbsp;Back</button>
+							  <button  type="submit" class="btn btn-primary blue">Next &nbsp;&nbsp;<span class='glyphicon glyphicon-arrow-right'></span> </button>
 							</div>
 						  </div>
 						</form>

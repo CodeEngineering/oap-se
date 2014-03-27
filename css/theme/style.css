@@ -131,10 +131,10 @@ form.form_label label{
 	background-position:center; 
 	}
 select {
-    -moz-appearance: none;
+   /*  -moz-appearance: none;
 	-webkit-appearance: none;
     -moz-appearance: none;
-    appearance: none;
+    appearance: none; */
 	text-indent: 0.01px;
 	text-overflow: '';
 }
@@ -197,4 +197,19 @@ table tfoot th:last-child{
 .time{
 width:100px;
 font-size:85%;
+}
+button{
+
+font-family:"neotechregular";
+color:black !important;
+}
+button.disabled{
+color:black;
+}
+.form-horizontal .has-feedback .form-control-feedback
+{
+right:-20px;
+}
+.nav-pills>li.active>a{
+background-color:#26a9e0;
 }
