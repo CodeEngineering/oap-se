@@ -46,7 +46,7 @@ class connector extends Acicrud {
 	}
 	function remove_job($id)
 	{
-		$sql="DELETE FROM `connector`.`connector_map` WHERE `connector_map`.`id` = $id";
+		$sql="DELETE FROM `connector_map` WHERE `connector_map`.`id` = $id";
 		$this->db->query($sql);
 	}
 }
