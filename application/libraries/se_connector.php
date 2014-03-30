@@ -12,7 +12,8 @@ class se_connector{
 					);
 
 	 var $form_fields=array(
-				"k"      =>'da54058d360f73e7e404a6f9cf7c5da9532fd805f0ef9',
+				"k"             =>'da54058d360f73e7e404a6f9cf7c5da9532fd805f0ef9',
+				'en4_maint_code'=>'letmein'
 			);				
 	
 	function __construct()
@@ -20,9 +21,12 @@ class se_connector{
 		$this->ci =& get_instance();	
 		include('se.fields.php');
 		$this->users_fields=$user_fieldlist;
+		$this->form_fields['en4_maint_code']='letmein';
 		if ($_SERVER['SERVER_ADDR']=='72.52.150.216')//bpsstaging.com
 		{
 			$this->form_fields['k']='da54058d360f73e7e404a6f9cf7c5da9532fd805f0ef9';
+			$this->form_fields['en4_maint_code']='letmein';
+			
 		}
 		
 	}				
@@ -99,6 +103,8 @@ $log='';
 		}else
 		{
 			$log .=$this->form_fields['username'] .':ok'."\r\n";
+			$log .=print_r($this->form_fields,1)."\r\n";
+			$log .=print_r($res,1)."\r\n";
 		}
 		//if(isset($res['user_id']))
 		{
